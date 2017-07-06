@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+
+    <string name="code1">
+       &lt;?xml version=\"1.0\" encoding=\"utf-8\"?&gt;
+&lt;resources&gt;
+　　&lt;string name=\"app_name\"&gt;一直線にウィジェットを並べる&lt;/string&gt;
+　　&lt;string name=\"textview01_label\"&gt;名　前&lt;/string&gt;
+　　&lt;string name=\"textview02_label\"&gt;住　所&lt;/string&gt;
+　　&lt;string name=\"button_label\"&gt;登　録&lt;/string&gt;
+&lt;/resources&gt;
+    </string>
+
+    <string name="code2">
+        &lt;?xml version=\"1.0\" encoding=\"utf-8\"?&gt;
+&lt;LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"
+　　android:orientation=\"vertical\"
+　　android:layout_width=\"fill_parent\"
+　　android:layout_height=\"fill_parent\"
+　　&gt;
+　　&lt;TextView android:id=\"@+id/textview01_id\"
+　　　　android:layout_width=\"fill_parent\"
+　　　　android:layout_height=\"wrap_content\"
+　　　　android:text=\"@string/textview01_label\"
+　　　　/&gt;
+　　&lt;EditText android:id=\"@+id/edittext01_id\"
+　　　　android:layout_width=\"fill_parent\"
+　　　　android:layout_height=\"wrap_content\"
+　　　　/&gt;
+　　&lt;TextView android:id=\"@+id/textview02_id\"
+　　　　android:layout_width=\"fill_parent\"
+　　　　android:layout_height=\"wrap_content\"
+　　　　android:text=\"@string/textview02_label\"
+　　　　/&gt;
+　　&lt;EditText android:id=\"@+id/edittext02_id\"
+　　　　android:layout_width=\"fill_parent\"
+　　　　android:layout_height=\"wrap_content\"
+　　　　/&gt;
+　　&lt;Button android:id=\"@+id/button_id\"
+　　　　android:layout_width=\"wrap_content\"
+　　　　android:layout_height=\"wrap_content\"
+　　　　android:text=\"@string/button_label\"
+　　　　/&gt;
+&lt;/LinearLayout&gt;
+    </string>
+
+
+
+    <string name="code3">
+        &lt;?xml version=\"1.0\" encoding=\"utf-8\"?&gt;
+&lt;LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"
+　　android:orientation=\"vertical\"
+　　android:layout_width=\"fill_parent\"
+　　android:layout_height=\"fill_parent\"
+　　&gt;
+　　&lt;LinearLayout
+　　　　android:layout_width=\"fill_parent\"
+　　　　android:layout_height=\"wrap_content\"
+　　　　&gt;
+　　　　&lt;TextView android:id=\"@+id/textview01_id\"
+　　　　　　android:layout_width=\"wrap_content\"
+　　　　　　android:layout_height=\"wrap_content\"
+　　　　　　android:text=\"@string/textview01_label\"
+　　　　　　/&gt;
+　　　　&lt;EditText android:id=\"@+id/edittext01_id\"
+　　　　　　android:layout_width=\"fill_parent\"
+　　　　　　android:layout_height=\"wrap_content\"
+　　　　　　/&gt;
+　　&lt;/LinearLayout&gt;
+　　&lt;LinearLayout
+　　　　android:layout_width=\"fill_parent\"
+　　　　android:layout_height=\"wrap_content\"
+　　　　&gt;
+　　　　&lt;TextView android:id=\"@+id/textview02_id\"
+　　　　　　android:layout_width=\"wrap_content\"
+　　　　　　android:layout_height=\"wrap_content\"
+　　　　　　android:text=\"@string/textview02_label\"
+　　　　　　/&gt;
+　　　　&lt;EditText android:id=\"@+id/edittext02_id\"
+　　　　　　android:layout_width=\"fill_parent\"
+　　　　　　android:layout_height=\"wrap_content\"
+　　　　　　/&gt;
+　　&lt;/LinearLayout&gt;
+　　&lt;Button android:id=\"@+id/button_id\"
+　　　　android:layout_width=\"wrap_content\"
+　　　　android:layout_height=\"wrap_content\"
+　　　　android:text=\"@string/button_label\"
+　　　　/&gt;
+&lt;/LinearLayout&gt;
+    </string>
+
+
+</resources>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="category">
+        <item>アクティビティ</item>
+        <item>アニメーション</item>
+        <item>インテント</item>
+        <item>カメラ</item>
+        <item>画面表示/操作</item>
+        <item>キー/タッチ</item>
+        <item>グラフィックス</item>
+        <item>コンテントプロバイダ</item>
+        <item>サービス</item>
+        <item>システム</item>
+        <item>スレッド/タスク</item>
+        <item>センサー</item>
+        <item>データ処理</item>
+        <item>ネットワーク</item>
+        <item>ハードウェア</item>
+        <item>フラグメント</item>
+        <item>ブロードキャストレシーバ</item>
+        <item>メディア</item>
+        <item>レイアウト</item>
+        <item>Bluetooth</item>
+        <item>GPS</item>
+        <item>NFC</item>
+        <item>WiFi</item>
+    </string-array>
+
+
+    <string-array name="category2">
+        <item>Google Maps</item>
+        <item>音声・画像処理</item>
+        <item>その他</item>
+    </string-array>
+
+
+    <string-array name="type1">
+        <item>リストアクティビティを作成する</item>
+        <item>折りたたみ可能なリストアクティビティを作成する</item>
+        <item>ランチャーアクティビティを作成する</item>
+        <item>設定画面を作成する</item>
+        <item>タブが選択されると</item>
+        <item>タブ画面を作成する....</item>
+        <item>タブにアイコンを貼り付ける</item>
+        <item>アクティビティに背景画像を設定する</item>
+        <item>アクティビティを透明にする</item>
+        <item>アクティビティを半透明にする</item>
+        <item>画面の向きを設定する</item>
+    </string-array>
+
+
+
+
+</resources>

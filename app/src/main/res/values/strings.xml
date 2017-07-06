@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">imageTab</string>
+    <string name="title_activity_detail">detailActivity</string>
+    <string name="title_activity_sub_list_view">subListViewActivity</string>
+    <string name="title_activity_list_view">listViewActivity</string>
+
+    <string name="title">setting Title</string>
+    <string name="checkbox_title">setting Title</string>
+    <string name="checkbox_summary">setting Title</string>
+    <string name="edittext_title">setting Title</string>
+    <string name="edittext_summary">setting Title</string>
+    <string name="list_title">setting Title</string>
+    <string name="list_summary">setting Title</string>
+    <string name="ringtone_title">setting Title</string>
+    <string name="ringtone_summary">setting Title</string>
+</resources>

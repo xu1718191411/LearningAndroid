@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+<PreferenceCategory android:title="【第1组】" >
+    <ListPreference
+        android:dialogTitle="list dialog title"
+        android:entries="@array/citys"
+        android:entryValues="@array/citys"
+        android:key="list_key"
+        android:summary="list summary"
+        android:title="list title" />
+</PreferenceCategory>
+<PreferenceCategory android:title="【第2组】" >
+    <EditTextPreference
+        android:defaultValue="缺省值1"
+        android:key="edit_text_key_1"
+        android:summary="edit summary"
+        android:title="edit text 1" />
+
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="checkbox_key"
+        android:summary="checkbox summary"
+        android:title="checkbox title" />
+</PreferenceCategory>
+
+<!-- 点击将浏览和打开网页 -->
+<Preference
+    android:summary="http://blog.csdn.net/zhangphil"
+    android:title="浏览网页" >
+    <intent
+        android:action="android.intent.action.VIEW"
+        android:data="http://blog.csdn.net/zhangphil" />
+</Preference>
+
+<!-- 此处将跳转到下一屏设置 -->
+<PreferenceScreen
+    android:key="preference_screen_2_key"
+    android:persistent="false"
+    android:title="PreferenceScreen 2" >
+    <EditTextPreference
+        android:defaultValue="缺省值2"
+        android:key="edit_text_key_2"
+        android:summary="edit summary"
+        android:title="edit text 2" />
+</PreferenceScreen>
+
+</PreferenceScreen>
