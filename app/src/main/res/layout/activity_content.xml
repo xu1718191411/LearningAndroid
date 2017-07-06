@@ -30,7 +30,6 @@
             android:textStyle="bold" />
 
         <LinearLayout
-            android:id="@+id/lineA"
             android:layout_width="fill_parent"
             android:layout_height="2dp"
             android:background="#017AFC" />
@@ -57,7 +56,6 @@
 
         <!--//蓝色的分割线-->
         <LinearLayout
-            android:id="@+id/lineA"
             android:layout_width="fill_parent"
             android:layout_height="1dp"
             android:background="#017AFC" />

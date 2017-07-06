@@ -68,6 +68,9 @@ public class subListViewActivity extends AppCompatActivity {
                     case 2:
                         intent = new Intent(getApplication(),com.example.syoui.imagetab.foundation.activity.foundation_activity_launcher.class);
                         break;
+                    case 3:
+                        intent = new Intent(getApplication(),com.example.syoui.imagetab.foundation.activity.foundation_activity_setting.class);
+                        break;
                     default:
                         intent = new Intent(getApplication(),com.example.syoui.imagetab.foundation.activity.foundation_activity_listView.class);
                         break;

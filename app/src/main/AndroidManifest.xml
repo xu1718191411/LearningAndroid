@@ -30,6 +30,7 @@
         <activity android:name=".foundation.activity.foundation_activity_listView" />
         <activity android:name=".foundation.activity.foundation_activity_foldingListView" />
         <activity android:name=".foundation.activity.foundation_activity_launcher" />
+        <activity android:name=".foundation.activity.foundation_activity_setting"></activity>
     </application>
 
 </manifest>
