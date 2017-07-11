@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/tabhost"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    　　
+
+    <TabWidget
+        android:id="@android:id/tabs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    　　
+
+    <FrameLayout
+        android:id="@android:id/tabcontent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="5px">
+
+        　　　
+        <LinearLayout android:id="@+id/sheet01_id" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            　　　　　　
+            <TextView android:id="@+id/textview01_id" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            　　　　
+        </LinearLayout>
+        　　　　<!-- タブ画面2のレイアウト -->
+        　　　　
+
+        <LinearLayout android:id="@+id/sheet02_id" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        　　　　　　
+
+            <TextView android:id="@+id/textview02_id" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        　　　　
+        </LinearLayout>
+    　　　　<!-- タブ画面3のレイアウト -->
+    　　　　
+
+        <LinearLayout android:id="@+id/sheet03_id" android:layout_width="fill_parent" android:layout_height="fill_parent">
+    　　　　　　
+            <TextView android:id="@+id/textview03_id" android:layout_width="fill_parent" android:layout_height="wrap_content"  />
+    　　　　
+        </LinearLayout>　　
+
+
+
+        <LinearLayout android:id="@+id/sheet04_id" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            　　　　　　
+            <TextView android:id="@+id/textview04_id" android:layout_width="fill_parent" android:layout_height="wrap_content"  />
+            　　　　
+        </LinearLayout>　　
+
+
+
+
+    </FrameLayout>
+
+</TabHost>

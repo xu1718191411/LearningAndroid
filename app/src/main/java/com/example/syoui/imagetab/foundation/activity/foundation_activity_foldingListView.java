@@ -27,7 +27,7 @@ public class foundation_activity_foldingListView extends AppCompatActivity {
 
         // アイテムのリスト
             List<Map<String, String>> itemList = new ArrayList<Map<String, String>>();
-        for(int i=0; i<ITEM_NUM; i++) {
+        for(int i = 0; i<ITEM_NUM; i++) {
             Map<String, String> item = new HashMap<String, String>();
             item.put("ITEM", "Item " + (i+1));
             itemList.add(item);

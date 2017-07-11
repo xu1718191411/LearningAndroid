@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.example.syoui.imagetab.foundation.map.MapsActivity;
+
 import java.util.ArrayList;
 
 public class subListViewActivity extends AppCompatActivity {
@@ -32,12 +34,19 @@ public class subListViewActivity extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             category = extras.getInt("category");
-            category = extras.getInt("type");
+            type = extras.getInt("type");
         }else{
 
         }
 
-        String[] arrString = getResources().getStringArray(R.array.type1);
+        String[] arrString = {};
+        if(type == 0){
+            arrString = getResources().getStringArray(R.array.type1);
+        }else{
+            arrString = getResources().getStringArray(R.array.type2);
+        }
+
+
 
 
         // リストビューに表示する要素を設定
@@ -58,31 +67,57 @@ public class subListViewActivity extends AppCompatActivity {
 
                 System.out.println("position is ......."+position);
                 Intent intent;
-                switch (position){
-                    case 0:
-                        intent = new Intent(getApplication(),com.example.syoui.imagetab.foundation.activity.foundation_activity_listView.class);
-                        break;
-                    case 1:
-                        intent = new Intent(getApplication(),com.example.syoui.imagetab.foundation.activity.foundation_activity_foldingListView.class);
-                        break;
-                    case 2:
-                        intent = new Intent(getApplication(),com.example.syoui.imagetab.foundation.activity.foundation_activity_launcher.class);
-                        break;
-                    case 3:
-                        intent = new Intent(getApplication(),com.example.syoui.imagetab.foundation.activity.foundation_activity_setting.class);
-                        break;
-                    default:
-                        intent = new Intent(getApplication(),com.example.syoui.imagetab.foundation.activity.foundation_activity_listView.class);
-                        break;
+
+                if(type == 0){
+                    //Activity
+                    switch (position){
+                        case 0:
+                            intent = new Intent(getApplication(),com.example.syoui.imagetab.foundation.activity.foundation_activity_listView.class);
+                            break;
+                        case 1:
+                            intent = new Intent(getApplication(),com.example.syoui.imagetab.foundation.activity.foundation_activity_foldingListView.class);
+                            break;
+                        case 2:
+                            intent = new Intent(getApplication(),com.example.syoui.imagetab.foundation.activity.foundation_activity_launcher.class);
+                            break;
+                        case 3:
+                            intent = new Intent(getApplication(),com.example.syoui.imagetab.foundation.activity.foundation_activity_setting.class);
+                            break;
+                        case 4:
+                            intent = new Intent(getApplication(),com.example.syoui.imagetab.foundation.activity.foundation_activity_icon_listView.class);
+                            break;
+                        case 5:
+                            intent = new Intent(getApplication(),MapsActivity.class);
+                            break;
+                        case 6:
+                            intent = new Intent(getApplication(),com.example.syoui.imagetab.foundation.activity.foundation_activity_layout.class);
+                            break;
+                        case 7:
+                            intent = new Intent(getApplication(),com.example.syoui.imagetab.foundation.activity.foundation_activity_side_menu.class);
+                            break;
+                        default:
+                            intent = new Intent(getApplication(),com.example.syoui.imagetab.foundation.activity.foundation_activity_layout.class);
+                            break;
+                    }
+                }else{
+                    //Maps
+                    switch(position){
+                        case 0:
+                            intent = new Intent(getApplication(),MapsActivity.class);
+                            break;
+                        default:
+                            intent = new Intent(getApplication(),com.example.syoui.imagetab.foundation.activity.foundation_activity_listView.class);
+                            break;
+                    }
                 }
+
+
 
 
                 startActivity(intent);
 
             }
         });
-
-
 
 
         listView.setAdapter(adapter);

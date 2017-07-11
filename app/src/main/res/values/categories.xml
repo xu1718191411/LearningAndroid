@@ -2,6 +2,7 @@
 <resources>
     <string-array name="category">
         <item>アクティビティ</item>
+        <item>マップ</item>
         <item>アニメーション</item>
         <item>インテント</item>
         <item>カメラ</item>
@@ -39,6 +40,11 @@
         <item>折りたたみ可能なリストアクティビティを作成する</item>
         <item>ランチャーアクティビティを作成する</item>
         <item>設定画面を作成する</item>
+        <item>アイコン付きリストビュー</item>
+        <item>GoogleMap</item>
+        <item>ナビコン起動する</item>
+        <item>サイドメニュー</item>
+        <item>タブ画面を作成する</item>
         <item>タブが選択されると</item>
         <item>タブ画面を作成する....</item>
         <item>タブにアイコンを貼り付ける</item>
@@ -48,6 +54,10 @@
         <item>画面の向きを設定する</item>
     </string-array>
 
+    <string-array name="type2">
+        <item>基本的な</item>
+        <item>マップの拡張機能</item>
+    </string-array>
 
 
 

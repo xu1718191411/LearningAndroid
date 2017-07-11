@@ -69,10 +69,7 @@ public class listViewActivity extends AppCompatActivity {
                 String item = (String) listView.getItemAtPosition(position);
                 Toast.makeText(listViewActivity.this, item, Toast.LENGTH_LONG).show();
 
-
                 Intent intent = new Intent(getApplication(), subListViewActivity.class);
-
-
 
                 intent.putExtra("category", category);
                 intent.putExtra("type", position);

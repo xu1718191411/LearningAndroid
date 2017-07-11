@@ -1,9 +1,7 @@
 package com.example.syoui.imagetab.foundation.activity;
 
-import android.app.ListActivity;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -18,7 +16,7 @@ public class foundation_activity_listView extends AppCompatActivity {
 
         String[] items = new String[ITEM_NUM];
 
-        for(int i=0; i<ITEM_NUM; i++) {
+        for(int i = 0; i < ITEM_NUM; i++) {
             items[i] = new String("Item" + (i+1));
         }
 

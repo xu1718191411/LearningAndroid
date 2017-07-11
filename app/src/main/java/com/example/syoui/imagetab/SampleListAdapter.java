@@ -33,6 +33,7 @@ public class SampleListAdapter extends ArrayAdapter<SampleListItem> {
         mInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View view;
@@ -54,6 +55,7 @@ public class SampleListAdapter extends ArrayAdapter<SampleListItem> {
         // タイトルを設定
         TextView title = (TextView)view.findViewById(R.id.title);
         title.setText(item.getTitle());
+
 
         return view;
     }
