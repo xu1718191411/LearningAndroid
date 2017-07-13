@@ -37,7 +37,6 @@ public class camera_preview extends AppCompatActivity implements SurfaceHolder.C
     private SurfaceTexture mSurface = null;
     private int[] mGrayImg = null;
     private Bitmap mBitmap = null;
-
     private String picSavedPath;
 
 
@@ -96,14 +95,17 @@ public class camera_preview extends AppCompatActivity implements SurfaceHolder.C
 //            params.setPreviewSize(prevSize.width, prevSize.height);
 //            myCamera.setParameters(params);
 
-            Log.d("preSizeWidth",""+prevSize.width);
-            Log.d("preSizeHeight",""+prevSize.height);
+
 
             mySurfaceView = (SurfaceView)findViewById(R.id.preview_id);
             ViewGroup.LayoutParams lp = (ViewGroup.LayoutParams) mySurfaceView.getLayoutParams();
 
             lp.width = (int)(prevSize.height/2); //横幅
             lp.height = (int)(prevSize.width/2); //縦幅
+
+            Log.d("preSizeWidth",""+ (int)(prevSize.height/2));
+            Log.d("preSizeHeight",""+ (int)(prevSize.width/2));
+
             mySurfaceView.setLayoutParams(lp);
             mySurfaceView.getHolder().setFixedSize(lp.height, lp.width);
 
@@ -251,12 +253,7 @@ public class camera_preview extends AppCompatActivity implements SurfaceHolder.C
 
         //image.setImageBitmap(rotated);
 
-
-
         ///////////////////////////////////////////////////////////////////////////
-
-
-
 
         Bitmap bitmap1 = rotated;
         Bitmap bitmap2 = BitmapFactory.decodeResource(getResources(), R.drawable.rufi);
@@ -270,13 +267,20 @@ public class camera_preview extends AppCompatActivity implements SurfaceHolder.C
         Canvas canvas = new Canvas(newBitmap);
 
 
-        int stampWidth = bitmap2.getWidth()/8;
-        int stampHeight = bitmap2.getHeight()/8;
+        ImageView imageView = (ImageView) findViewById(R.id.imageView3);
+
+        Log.d("view......",imageView.getWidth()+":"+imageView.getHeight());
+//        int stampWidth = bitmap2.getWidth()/8;
+//        int stampHeight = bitmap2.getHeight()/8;
+
+
+        int stampWidth = 135;
+        int stampHeight = 135;
 
         Bitmap bs = getResizedBitmap(bitmap2,stampWidth,stampHeight);
 
         canvas.drawBitmap(bitmap1,0,0,null);
-        canvas.drawBitmap(bs,backgroundWidth/2-stampWidth/2,(int)(backgroundHeight-stampHeight*1.2),null);
+        canvas.drawBitmap(bs,backgroundWidth/2-stampWidth/2,(int)(backgroundHeight-stampHeight-30),null);
         //newBitmap.compress(Bitmap.CompressFormat.JPEG, 100, outputStream);
 
         image.setImageBitmap(newBitmap);
