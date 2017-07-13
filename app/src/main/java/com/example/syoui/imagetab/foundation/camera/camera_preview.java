@@ -243,8 +243,6 @@ public class camera_preview extends AppCompatActivity implements SurfaceHolder.C
 
         ImageView image = (ImageView) findViewById(R.id.afterShow);
 
-
-
         Matrix matrix = new Matrix();
         matrix.postRotate(90);
 
@@ -275,7 +273,7 @@ public class camera_preview extends AppCompatActivity implements SurfaceHolder.C
 
 
         int stampWidth = 135;
-        int stampHeight = 135;
+        int stampHeight = 135   ;
 
         Bitmap bs = getResizedBitmap(bitmap2,stampWidth,stampHeight);
 
