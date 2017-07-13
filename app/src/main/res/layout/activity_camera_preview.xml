@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.syoui.imagetab.foundation.camera.camera_preview">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <SurfaceView
+                android:id="@+id/preview_id"
+                android:layout_gravity="center"
+                android:layout_width="1dp"
+                android:layout_height="1dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/rufi"
+                android:layout_marginBottom="27dp"
+                android:layout_alignBottom="@+id/preview_id"
+                android:layout_alignParentLeft="true"
+                android:onClick="takePictureOnClick"
+                android:layout_alignParentStart="true"
+                />
+        </RelativeLayout>
+
+        <!--
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="写真を取る"
+            android:id="@+id/takePic"
+            android:onClick="takePictureOnClick"
+            android:background="@drawable/button_state"/>
+            -->
+
+        <ImageView
+            android:id="@+id/afterShow"
+            android:layout_width="250dp"
+            android:layout_height="333dp"
+            android:src="@drawable/giant"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

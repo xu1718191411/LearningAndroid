@@ -42,8 +42,12 @@ public class subListViewActivity extends AppCompatActivity {
         String[] arrString = {};
         if(type == 0){
             arrString = getResources().getStringArray(R.array.type1);
-        }else{
+        }else if(type == 1){
             arrString = getResources().getStringArray(R.array.type2);
+        }else if(type == 2){
+            arrString = getResources().getStringArray(R.array.type3);
+        }else{
+            arrString = getResources().getStringArray(R.array.type4);
         }
 
 
@@ -99,7 +103,7 @@ public class subListViewActivity extends AppCompatActivity {
                             intent = new Intent(getApplication(),com.example.syoui.imagetab.foundation.activity.foundation_activity_layout.class);
                             break;
                     }
-                }else{
+                }else if(type == 1){
                     //Maps
                     switch(position){
                         case 0:
@@ -109,6 +113,44 @@ public class subListViewActivity extends AppCompatActivity {
                             intent = new Intent(getApplication(),com.example.syoui.imagetab.foundation.activity.foundation_activity_listView.class);
                             break;
                     }
+                }else if(type == 2){
+                    switch(position){
+                        case 0:
+                            intent = new Intent(getApplication(),com.example.syoui.imagetab.foundation.sensor.sensor_list.class);
+                            break;
+                        case 1:
+                            intent =new Intent(getApplication(),com.example.syoui.imagetab.foundation.sensor.acceleration.class);
+                            break;
+                        case 2:
+                            intent =new Intent(getApplication(),com.example.syoui.imagetab.foundation.sensor.tendency.class);
+                            break;
+                        case 3:
+                            intent =new Intent(getApplication(),com.example.syoui.imagetab.foundation.sensor.magnetism.class);
+                            break;
+                        case 4:
+                            intent =new Intent(getApplication(),com.example.syoui.imagetab.foundation.sensor.proximity.class);
+                            break;
+                        case 5:
+                            intent =new Intent(getApplication(),com.example.syoui.imagetab.foundation.sensor.light.class);
+                            break;
+                        default:
+                            intent =new Intent(getApplication(),com.example.syoui.imagetab.foundation.sensor.magnetism.class);
+                            break;
+                    }
+                }else if(type == 3){
+                    switch (position){
+                        case 0:
+                            intent = new Intent(getApplication(),com.example.syoui.imagetab.foundation.camera.simpleCamera.class);
+                            break;
+                        case 1:
+                            intent = new Intent(getApplication(),com.example.syoui.imagetab.foundation.camera.camera_preview.class);
+                            break;
+                        default:
+                            intent = new Intent(getApplication(),com.example.syoui.imagetab.foundation.sensor.sensor_list.class);
+                            break;
+                    }
+                }else{
+                    intent = new Intent(getApplication(),MapsActivity.class);
                 }
 
 

@@ -34,6 +34,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private LocationManager locationManager;
     private double Latitude = 0;
     private double Longtitude = 0;
+    private Marker mMarker = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -156,50 +157,111 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
 
-        mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
 
+        mMap.setOnMapLongClickListener(new GoogleMap.OnMapLongClickListener() {
             @Override
-            public void onMapClick(LatLng point) {
+            public void onMapLongClick(LatLng point) {
+                if(mMarker != null){
+                    mMarker.remove();
+                }
 
                 float[] results = new float[1];
                 Location.distanceBetween(point.latitude, point.longitude, Latitude, Longtitude, results);
                 Toast.makeText(getApplicationContext(), "関空までの距離：" + ( (Float)(results[0]/1000) ).toString() + "Km", Toast.LENGTH_LONG).show();
 
-                LatLng from = new LatLng(point.latitude, point.longitude);
-                LatLng to = new LatLng(Latitude, Longtitude);
-                double direction = com.google.maps.android.SphericalUtil.computeHeading(from,to);
+                Location from = new Location("from");
+                from.setLatitude(point.latitude);
+                from.setLongitude(point.longitude);
+                Location to = new Location("to");
+                to.setLatitude(Latitude);
+                to.setLongitude(Longtitude);
 
-
+                double direction = from.bearingTo(to);
                 String _direction;
 
-                if(direction>=5 && direction<=85){
-                    _direction = "WS";
-                }else if(direction >85 && direction <= 95){
-                    _direction = "W";
-                }else if(direction > 95 && direction <=175){
-                    _direction = "NW";
-                }else if(direction>= 175 || direction <-175){
-                    _direction = "N";
-                }else if(direction <-95 && direction >= -175){
-                    _direction = "EN";
-                }else if(direction < -85 && direction >= -95){
-                    _direction = "E";
-                }else if(direction < -5 && direction >= -85){
-                    _direction = "ES";
-                }else if(direction < 0 || direction < 5){
+                if(direction >=-22.5 && direction <= -22.5){
                     _direction = "S";
+                }else if(direction >= 22.5 && direction <= 67.5){
+                    _direction = "SW";
+                }else if(direction >= 67.5 && direction <= 112.5){
+                    _direction = "W";
+                }else if(direction >= 112.5 && direction <= 157.5){
+                    _direction = "NW";
+                }else if(direction >=157.5 || direction <= -157.5){
+                    _direction = "N";
+                }else if(direction >= -157.5 && direction <= -112.5){
+                    _direction = "NE";
+                }else if(direction >= -112.5 && direction <= -57.5){
+                    _direction = "E";
+                }else if(direction >= -67.5 && direction <= -22.5){
+                    _direction = "SE";
                 }else{
-                    _direction = "UNKNOW";
+                    _direction = "不明";
                 }
 
                 MarkerOptions marker = new MarkerOptions().position(
                         new LatLng(point.latitude, point.longitude)).title( "関空までの距離：" + ( (Float)(results[0]/1000) ).toString() + "Km:現地点との方角は：" + _direction );
-                mMap.addMarker(marker);
+                mMarker = mMap.addMarker(marker);
+
 
             }
-
-
         });
+
+
+//        mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
+//
+//            @Override
+//            public void onMapClick(LatLng point) {
+//
+//                if(mMarker != null){
+//                    mMarker.remove();
+//                }
+//
+//                float[] results = new float[1];
+//                Location.distanceBetween(point.latitude, point.longitude, Latitude, Longtitude, results);
+//                Toast.makeText(getApplicationContext(), "関空までの距離：" + ( (Float)(results[0]/1000) ).toString() + "Km", Toast.LENGTH_LONG).show();
+//
+//                Location from = new Location("from");
+//                from.setLatitude(point.latitude);
+//                from.setLongitude(point.longitude);
+//                Location to = new Location("to");
+//                to.setLatitude(Latitude);
+//                to.setLongitude(Longtitude);
+//
+//                double direction = from.bearingTo(to);
+//                String _direction;
+//
+//                if(direction >=-22.5 && direction <= -22.5){
+//                    _direction = "S";
+//                }else if(direction >= 22.5 && direction <= 67.5){
+//                    _direction = "SW";
+//                }else if(direction >= 67.5 && direction <= 112.5){
+//                    _direction = "W";
+//                }else if(direction >= 112.5 && direction <= 157.5){
+//                    _direction = "NW";
+//                }else if(direction >=157.5 || direction <= -157.5){
+//                    _direction = "N";
+//                }else if(direction >= -157.5 && direction <= -112.5){
+//                    _direction = "NE";
+//                }else if(direction >= -112.5 && direction <= -57.5){
+//                    _direction = "E";
+//                }else if(direction >= -67.5 && direction <= -22.5){
+//                    _direction = "SE";
+//                }else{
+//                    _direction = "不明";
+//                }
+//
+//                MarkerOptions marker = new MarkerOptions().position(
+//                        new LatLng(point.latitude, point.longitude)).title( "関空までの距離：" + ( (Float)(results[0]/1000) ).toString() + "Km:現地点との方角は：" + _direction );
+//                mMarker = mMap.addMarker(marker);
+//
+//
+//
+//
+//            }
+//
+//
+//        });
 
 
 

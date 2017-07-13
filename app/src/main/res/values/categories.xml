@@ -3,9 +3,10 @@
     <string-array name="category">
         <item>アクティビティ</item>
         <item>マップ</item>
+        <item>センサー</item>
+        <item>カメラ</item>
         <item>アニメーション</item>
         <item>インテント</item>
-        <item>カメラ</item>
         <item>画面表示/操作</item>
         <item>キー/タッチ</item>
         <item>グラフィックス</item>
@@ -13,7 +14,6 @@
         <item>サービス</item>
         <item>システム</item>
         <item>スレッド/タスク</item>
-        <item>センサー</item>
         <item>データ処理</item>
         <item>ネットワーク</item>
         <item>ハードウェア</item>
@@ -59,6 +59,21 @@
         <item>マップの拡張機能</item>
     </string-array>
 
+    <string-array name="type3">
+        <item>センサーの一覧を取得する</item>
+        <item>加速度センサーの値を取得する</item>
+        <item>傾きセンサーの値を取得する</item>
+        <item>磁気センサーの値を取得する</item>
+        <item>近傍センサーの値を取得する</item>
+        <item>照度センサーの値を取得する</item>
+        <item>ジャイロセンサーの値を取得する</item>
+        <item>重力センサーの値を取得する</item>
+        <item>直線加速度センサーの値を取得する</item>
+    </string-array>カメラ
 
+    <string-array name="type4">
+        <item>カメラを呼び出す</item>
+        <item>カメラプレビュー</item>
+    </string-array>
 
 </resources>
