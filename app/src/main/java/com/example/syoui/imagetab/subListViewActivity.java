@@ -10,6 +10,9 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.syoui.imagetab.foundation.map.MapsActivity;
+import com.example.syoui.imagetab.foundation.popup.alert;
+import com.example.syoui.imagetab.foundation.popup.confirm;
+import com.example.syoui.imagetab.foundation.popup.customize;
 
 import java.util.ArrayList;
 
@@ -46,8 +49,10 @@ public class subListViewActivity extends AppCompatActivity {
             arrString = getResources().getStringArray(R.array.type2);
         }else if(type == 2){
             arrString = getResources().getStringArray(R.array.type3);
-        }else{
+        }else if(type == 3){
             arrString = getResources().getStringArray(R.array.type4);
+        }else{
+            arrString = getResources().getStringArray(R.array.type5);
         }
 
 
@@ -146,14 +151,26 @@ public class subListViewActivity extends AppCompatActivity {
                             intent = new Intent(getApplication(),com.example.syoui.imagetab.foundation.camera.camera_preview.class);
                             break;
                         default:
-                            intent = new Intent(getApplication(),com.example.syoui.imagetab.foundation.sensor.sensor_list.class);
+                            intent = new Intent(getApplication(),com.example.syoui.imagetab.foundation.camera.simpleCamera.class);
                             break;
                     }
+                }else if(type == 4){
+                    switch (position){
+                        case 0:
+                            intent = new Intent(getApplication(),alert.class);
+                            break;
+                        case 1:
+                            intent = new Intent(getApplication(),confirm.class);
+                            break;
+                        default:
+                            intent = new Intent(getApplication(),customize.class);
+                            break;
+                    }
+                }else if(type == 5){
+                    intent = new Intent(getApplication(),customize.class);
                 }else{
-                    intent = new Intent(getApplication(),MapsActivity.class);
+                    intent = new Intent(getApplication(),customize.class);
                 }
-
-
 
 
                 startActivity(intent);

@@ -5,6 +5,7 @@
         <item>マップ</item>
         <item>センサー</item>
         <item>カメラ</item>
+        <item>ポプアップ</item>
         <item>アニメーション</item>
         <item>インテント</item>
         <item>画面表示/操作</item>
@@ -74,6 +75,13 @@
     <string-array name="type4">
         <item>カメラを呼び出す</item>
         <item>カメラプレビュー</item>
+    </string-array>
+
+
+    <string-array name="type5">
+        <item>alert</item>
+        <item>confirm</item>
+        <item>customize popUp</item>
     </string-array>
 
 </resources>

@@ -8,12 +8,26 @@
          location permissions for the 'MyLocation' functionality. 
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    　　<uses-permission android:name="android.permission.CAMERA"/>
 
-    <uses-feature android:name="android.hardware.camera"></uses-feature>
-    　　<uses-feature android:name="android.hardware.camera.autofocus"></uses-feature>
-    　　<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
 
+    　　
+
+
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+
+
+    　　
+
+
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+
+    　　
+
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -22,10 +36,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-
-
-
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -76,7 +86,10 @@
         <activity android:name=".foundation.sensor.proximity" />
         <activity android:name=".foundation.sensor.light" />
         <activity android:name=".foundation.camera.simpleCamera" />
-        <activity android:name=".foundation.camera.camera_preview"></activity>
+        <activity android:name=".foundation.camera.camera_preview" />
+        <activity android:name=".foundation.popup.customize" />
+        <activity android:name=".foundation.popup.alert" />
+        <activity android:name=".foundation.popup.confirm"></activity>
     </application>
 
 </manifest>
