@@ -24,7 +24,6 @@ public class customize extends AppCompatActivity {
 
 
         button = (Button) findViewById(R.id.buttonShowCustomDialog);
-        _submit = (Button) findViewById(R.id._submit);
 
         button.setOnClickListener(new View.OnClickListener(){
 
@@ -36,7 +35,7 @@ public class customize extends AppCompatActivity {
                 dialog.setTitle("Title...");
 
                 TextView text = (TextView) dialog.findViewById(R.id.text);
-                
+
                 dialog.show();
 
 
@@ -62,10 +61,7 @@ public class customize extends AppCompatActivity {
 
         });
 
-
-
-
-
-
     }
+
+
 }

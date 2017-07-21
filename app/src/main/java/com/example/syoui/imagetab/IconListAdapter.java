@@ -56,10 +56,6 @@ public class IconListAdapter  extends ArrayAdapter<IconListItem> {
         ImageView im = (ImageView)view.findViewById(R.id.onePieceId);
         im.setImageResource(this.getContext().getResources().getIdentifier(item.getImageName(),"drawable",  this.getContext().getPackageName()));
 
-
-
-
-
         return view;
     }
 

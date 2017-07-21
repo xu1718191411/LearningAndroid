@@ -89,7 +89,8 @@
         <activity android:name=".foundation.camera.camera_preview" />
         <activity android:name=".foundation.popup.customize" />
         <activity android:name=".foundation.popup.alert" />
-        <activity android:name=".foundation.popup.confirm"></activity>
+        <activity android:name=".foundation.popup.confirm" />
+        <activity android:name=".foundation.popup.listViewPopUp"></activity>
     </application>
 
 </manifest>

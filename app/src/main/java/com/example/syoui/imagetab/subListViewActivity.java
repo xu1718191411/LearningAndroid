@@ -13,6 +13,7 @@ import com.example.syoui.imagetab.foundation.map.MapsActivity;
 import com.example.syoui.imagetab.foundation.popup.alert;
 import com.example.syoui.imagetab.foundation.popup.confirm;
 import com.example.syoui.imagetab.foundation.popup.customize;
+import com.example.syoui.imagetab.foundation.popup.listViewPopUp;
 
 import java.util.ArrayList;
 
@@ -162,8 +163,11 @@ public class subListViewActivity extends AppCompatActivity {
                         case 1:
                             intent = new Intent(getApplication(),confirm.class);
                             break;
-                        default:
+                        case 2:
                             intent = new Intent(getApplication(),customize.class);
+                            break;
+                        default:
+                            intent = new Intent(getApplication(),listViewPopUp.class);
                             break;
                     }
                 }else if(type == 5){

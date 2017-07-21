@@ -82,6 +82,7 @@
         <item>alert</item>
         <item>confirm</item>
         <item>customize popUp</item>
+        <item>list view pop up</item>
     </string-array>
 
 </resources>
