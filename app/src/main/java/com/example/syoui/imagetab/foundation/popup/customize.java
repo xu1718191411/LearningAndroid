@@ -56,9 +56,6 @@ public class customize extends AppCompatActivity {
 
             }
 
-
-
-
         });
 
     }

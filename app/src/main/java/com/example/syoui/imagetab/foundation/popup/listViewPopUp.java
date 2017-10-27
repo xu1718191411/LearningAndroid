@@ -2,6 +2,7 @@ package com.example.syoui.imagetab.foundation.popup;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -25,6 +26,7 @@ public class listViewPopUp extends AppCompatActivity {
 
     final Context context = this;
     private Button button;
+    private Button confirmButton;
 
     private ArrayList<IconListItem> listItems = new ArrayList<>();
     private ListView listView;
@@ -32,7 +34,7 @@ public class listViewPopUp extends AppCompatActivity {
     private AsyncTask<Long, Void, Void> mTask;
     private _IconListAdapter mAdapter;
     private int position = 0;
-
+    private  Dialog dialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,13 +43,13 @@ public class listViewPopUp extends AppCompatActivity {
 
         button = (Button) findViewById(R.id.buttonShowCustomDialog);
 
-
-
         // リストビューに表示する要素を設定
         for (int i = 0; i < 8; i++) {
             IconListItem item = new IconListItem("icon"+i,"sample text No. " + String.valueOf(i));
             listItems.add(item);
         }
+
+        dialog = new Dialog(context);
 
 
         button.setOnClickListener(new View.OnClickListener(){
@@ -55,16 +57,13 @@ public class listViewPopUp extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // custom dialog
-                final Dialog dialog = new Dialog(context);
+
                 dialog.setContentView(R.layout.customize_list_view_layout);
                 dialog.setTitle("list view pop up...");
 
 
                 // レイアウトからリストビューを取得
-                ListView listView = (ListView) dialog.findViewById(R.id.popUpListView);
-
-
-
+                final ListView listView = (ListView) dialog.findViewById(R.id.popUpListView);
 
 
                 // 出力結果をリストビューに表示
@@ -76,16 +75,29 @@ public class listViewPopUp extends AppCompatActivity {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view,
                                             int _position, long id) {
+                                            position = _position;
 
+                        for (int i = 0; i < mAdapter.getCount(); i++) {
+                            View item = listView.getChildAt(i);
+                            if (item != null) {
+                                item.setBackgroundColor(Color.WHITE);
+                            }
+                        }
+                        view.setBackgroundColor(Color.GRAY);
+
+                    }
+                });
+
+
+
+                confirmButton = (Button) dialog.findViewById(R.id.confirmButton);
+                confirmButton.setOnClickListener(new View.OnClickListener(){
+                    @Override
+                    public void onClick(View view) {
                         dialog.dismiss();
-
-
                         ImageView img = (ImageView) findViewById(R.id.changeImage);
-
-                        String imgName = "_icon"+_position;
+                        String imgName = "_icon"+position;
                         img.setImageResource(context.getResources().getIdentifier(imgName,"drawable",  context.getPackageName()));
-
-
                     }
                 });
 
@@ -96,6 +108,10 @@ public class listViewPopUp extends AppCompatActivity {
 
 
         });
+
+
+
+
 
     }
 
@@ -152,3 +168,13 @@ class _IconListAdapter  extends ArrayAdapter<IconListItem> {
 
 
 }
+
+
+
+
+
+
+
+
+
+

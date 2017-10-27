@@ -6,6 +6,7 @@
         <item>センサー</item>
         <item>カメラ</item>
         <item>ポプアップ</item>
+        <item>データベース</item>
         <item>アニメーション</item>
         <item>インテント</item>
         <item>画面表示/操作</item>
@@ -83,6 +84,10 @@
         <item>confirm</item>
         <item>customize popUp</item>
         <item>list view pop up</item>
+    </string-array>
+
+    <string-array name="type6">
+        <item>データ一覧</item>
     </string-array>
 
 </resources>

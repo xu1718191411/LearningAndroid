@@ -90,7 +90,8 @@
         <activity android:name=".foundation.popup.customize" />
         <activity android:name=".foundation.popup.alert" />
         <activity android:name=".foundation.popup.confirm" />
-        <activity android:name=".foundation.popup.listViewPopUp"></activity>
+        <activity android:name=".foundation.popup.listViewPopUp" />
+        <activity android:name=".foundation.database.select"></activity>
     </application>
 
 </manifest>

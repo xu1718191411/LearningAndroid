@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.example.syoui.imagetab.foundation.database.select;
 import com.example.syoui.imagetab.foundation.map.MapsActivity;
 import com.example.syoui.imagetab.foundation.popup.alert;
 import com.example.syoui.imagetab.foundation.popup.confirm;
@@ -52,8 +53,10 @@ public class subListViewActivity extends AppCompatActivity {
             arrString = getResources().getStringArray(R.array.type3);
         }else if(type == 3){
             arrString = getResources().getStringArray(R.array.type4);
-        }else{
+        }else if(type == 4){
             arrString = getResources().getStringArray(R.array.type5);
+        }else{
+            arrString = getResources().getStringArray(R.array.type6);
         }
 
 
@@ -171,7 +174,16 @@ public class subListViewActivity extends AppCompatActivity {
                             break;
                     }
                 }else if(type == 5){
-                    intent = new Intent(getApplication(),customize.class);
+                    switch (position){
+                        case 0:
+                            intent = new Intent(getApplication(),select.class);
+                            break;
+                        default:
+                            intent = new Intent(getApplication(),select.class);
+                            break;
+                    }
+
+
                 }else{
                     intent = new Intent(getApplication(),customize.class);
                 }
