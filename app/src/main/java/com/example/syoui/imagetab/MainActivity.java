@@ -1,13 +1,14 @@
 package com.example.syoui.imagetab;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Gallery;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.content.Intent;
+
+import com.example.syoui.imagetab.record.RecordActivity;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -56,6 +57,15 @@ public class MainActivity extends AppCompatActivity {
                         image1.setImageResource(R.drawable.soro2);
                         break;
                 }
+            }
+        });
+
+        Button goToRecord = (Button)findViewById(R.id.goToRecord);
+        goToRecord.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplication(), RecordActivity.class);
+                startActivity(intent);
             }
         });
     }
