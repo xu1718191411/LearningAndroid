@@ -2,7 +2,6 @@ package com.example.syoui.imagetab.record;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -25,12 +24,7 @@ public class RecordActivity extends AppCompatActivity {
         mRecordButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d(TAG,"clicked");
-                if(mVoiceRecord.getRecordingStatus()){
-                    mVoiceRecord.stopRecord();
-                }else{
-                    mVoiceRecord.startRecord();
-                }
+                mVoiceRecord.startRecord();
             }
         });
 
