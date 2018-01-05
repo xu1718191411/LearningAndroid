@@ -68,8 +68,37 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-    }
 
+
+        Button goToSpeak = (Button) findViewById(R.id.speak);
+        goToSpeak.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplication(), SpeakActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        Button slide = (Button) findViewById(R.id.slide);
+        slide.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplication(), SlideActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button dbButton = (Button) findViewById(R.id.db);
+        dbButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplication(), SQLiteActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
 
 
 }
