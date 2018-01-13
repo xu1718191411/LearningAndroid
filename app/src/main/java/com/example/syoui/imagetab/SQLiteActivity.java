@@ -39,42 +39,4 @@ public class SQLiteActivity extends AppCompatActivity {
         });
     }
 
-
-
-
-
-    // assetに格納したDBをデフォルトのDBパスに作成し、コピーする
-    private void copyDatabaseFromAsset(){
-        try{
-            //富士通系一部端末においてデフォルトパスを作成出来ない問題あり
-            File databaseDir = new File(DB_PATH);
-            if (!databaseDir.exists()) databaseDir.mkdirs();
-
-            // asset内のDBにアクセス
-            InputStream is = context.getAssets().open(DB_NAME);
-
-            // デフォルトのDBパスに作成した空のDB
-            String dbPath = DB_PATH + DB_NAME_OUT;
-            OutputStream os = new FileOutputStream(dbPath);
-
-            // コピー
-            byte[] buffer = new byte[1024];
-            int size;
-            while((size = is.read(buffer)) > 0){
-                os.write(buffer, 0, size);
-            }
-
-            // クローズ
-            is.close();
-            os.flush();
-            os.close();
-            Log.d(TAG,"DB Copy:success");
-        }catch(IOException e){
-            Log.e(TAG, "IOE:" + e.toString());
-            Log.d(TAG, "DB Copy:failed");
-        }
-    }
-
-
-
 }

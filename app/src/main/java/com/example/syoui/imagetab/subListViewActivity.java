@@ -10,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.syoui.imagetab.foundation.database.select;
+import com.example.syoui.imagetab.foundation.fragment.FragmentListenerActivity;
 import com.example.syoui.imagetab.foundation.map.MapsActivity;
 import com.example.syoui.imagetab.foundation.popup.alert;
 import com.example.syoui.imagetab.foundation.popup.confirm;
@@ -55,8 +56,10 @@ public class subListViewActivity extends AppCompatActivity {
             arrString = getResources().getStringArray(R.array.type4);
         }else if(type == 4){
             arrString = getResources().getStringArray(R.array.type5);
-        }else{
+        }else if(type == 5){
             arrString = getResources().getStringArray(R.array.type6);
+        }else{
+            arrString = getResources().getStringArray(R.array.typeDefault);
         }
 
 
@@ -79,7 +82,7 @@ public class subListViewActivity extends AppCompatActivity {
                                     int position, long id) {
 
                 System.out.println("position is ......."+position);
-                Intent intent;
+                Intent intent = new Intent(getApplication(),customize.class);
 
                 if(type == 0){
                     //Activity
@@ -174,6 +177,16 @@ public class subListViewActivity extends AppCompatActivity {
                             break;
                     }
                 }else if(type == 5){
+
+                    switch (position){
+                        case 0:
+                            intent = new Intent(getApplication(),FragmentListenerActivity.class);
+                            break;
+                        default:
+                            break;
+                    }
+
+                } else if(type == 6){
                     switch (position){
                         case 0:
                             intent = new Intent(getApplication(),select.class);
