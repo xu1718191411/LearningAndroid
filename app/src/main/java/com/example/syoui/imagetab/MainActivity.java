@@ -1,14 +1,19 @@
 package com.example.syoui.imagetab;
 
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.example.syoui.imagetab.record.RecordActivity;
+
+import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -31,6 +36,26 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+
+        PackageManager pm = getPackageManager();
+        List<PackageInfo> pckInfoList = pm.getInstalledPackages(
+                PackageManager.GET_ACTIVITIES | PackageManager.GET_SERVICES);
+        for(PackageInfo pckInfo : pckInfoList){
+            /// ...処理
+//            Log.d("hahahaha",pckInfo.packageName);
+
+            if(pm.getLaunchIntentForPackage(pckInfo.packageName) != null){
+                ///起動可能な時の処理
+                Log.d("hahahaha",pm.getLaunchIntentForPackage(pckInfo.packageName).getComponent().getPackageName()+"");
+                Log.d("hahahaha",pm.getLaunchIntentForPackage(pckInfo.packageName).getComponent().getClassName()+"");
+            }else{
+                ///起動不可の時の処理
+            }
+        }
+
+
 
 
         button.setOnClickListener(new View.OnClickListener(){
