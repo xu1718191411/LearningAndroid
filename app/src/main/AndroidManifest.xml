@@ -19,22 +19,32 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+
+
+        <activity android:name=".TutorialActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
         <activity
-            android:name=".detailActivity"
+            android:name=".KnowledgeActivity"
             android:label="@string/title_activity_detail"
             android:theme="@style/AppTheme.NoActionBar" />
+
+
         <activity android:name=".listViewActivity" />
+
+
         <activity
             android:name=".subListViewActivity"
             android:label="@string/title_activity_sub_list_view"
             android:theme="@style/AppTheme.NoActionBar" />
+
+
         <activity android:name=".contentActivity" />
         <activity android:name=".videoActivity" />
         <activity android:name=".foundation.activity.foundation_activity_listView" />
@@ -67,17 +77,29 @@
         <activity android:name=".foundation.popup.confirm" />
         <activity android:name=".foundation.popup.listViewPopUp" />
         <activity android:name=".foundation.database.select" />
-        <activity android:name=".record.RecordActivity"></activity>
-        <activity android:name=".SpeakActivity"></activity>
-        <activity android:name=".SlideActivity"></activity>
+        <activity android:name=".record.RecordActivity">
+
+        </activity>
+        <activity android:name=".SpeakActivity">
+
+        </activity>
+        <activity android:name=".SlideActivity">
+
+        </activity>
         <activity
             android:name=".SQLiteActivity"
             android:label="@string/title_activity_sq_lite_activity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
         <activity
             android:name=".foundation.fragment.FragmentListenerActivity"
             android:label="@string/title_activity_fragment_listener"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+
+
     </application>
 
 </manifest>

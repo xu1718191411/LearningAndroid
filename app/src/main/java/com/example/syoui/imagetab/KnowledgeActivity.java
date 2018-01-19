@@ -16,7 +16,7 @@ import com.example.syoui.imagetab.record.RecordActivity;
 import java.util.List;
 
 
-public class MainActivity extends AppCompatActivity {
+public class KnowledgeActivity extends AppCompatActivity {
     LinearLayout mLinearLayout;
     int tab = 1;
     int totalNum = 5;
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         image1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplication(), detailActivity.class);
+                Intent intent = new Intent(getApplication(), TutorialActivity.class);
                 startActivity(intent);
             }
         });
@@ -54,8 +54,6 @@ public class MainActivity extends AppCompatActivity {
                 ///起動不可の時の処理
             }
         }
-
-
 
 
         button.setOnClickListener(new View.OnClickListener(){
