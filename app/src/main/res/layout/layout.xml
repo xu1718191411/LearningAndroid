@@ -32,6 +32,11 @@
             android:text="Record"
             android:id="@+id/goToRecord"/>
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="他のアプリを起動"
+            android:id="@+id/launchOtherApps"/>
 
     </LinearLayout>
 

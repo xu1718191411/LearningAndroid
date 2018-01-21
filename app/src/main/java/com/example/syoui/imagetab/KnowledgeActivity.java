@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.example.syoui.imagetab.launch_others.LaunchOtherAppActivity;
 import com.example.syoui.imagetab.record.RecordActivity;
 
 import java.util.List;
@@ -39,21 +40,9 @@ public class KnowledgeActivity extends AppCompatActivity {
 
 
 
-        PackageManager pm = getPackageManager();
-        List<PackageInfo> pckInfoList = pm.getInstalledPackages(
-                PackageManager.GET_ACTIVITIES | PackageManager.GET_SERVICES);
-        for(PackageInfo pckInfo : pckInfoList){
-            /// ...処理
-//            Log.d("hahahaha",pckInfo.packageName);
 
-            if(pm.getLaunchIntentForPackage(pckInfo.packageName) != null){
-                ///起動可能な時の処理
-                Log.d("hahahaha",pm.getLaunchIntentForPackage(pckInfo.packageName).getComponent().getPackageName()+"");
-                Log.d("hahahaha",pm.getLaunchIntentForPackage(pckInfo.packageName).getComponent().getClassName()+"");
-            }else{
-                ///起動不可の時の処理
-            }
-        }
+
+
 
 
         button.setOnClickListener(new View.OnClickListener(){
@@ -88,6 +77,15 @@ public class KnowledgeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplication(), RecordActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button goTolaunchOtherApp = (Button)findViewById(R.id.launchOtherApps);
+        goTolaunchOtherApp.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplication(), LaunchOtherAppActivity.class);
                 startActivity(intent);
             }
         });
