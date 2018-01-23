@@ -15,7 +15,6 @@ import java.util.ArrayList;
 
 public class FragmentListenerActivity extends AppCompatActivity {
 
-
     private ArrayList<String> mList = null;
     private Context mContext = null;
     private ListView mListView = null;

@@ -1,11 +1,8 @@
 package com.example.syoui.imagetab;
 
 import android.content.Intent;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -13,8 +10,6 @@ import android.widget.LinearLayout;
 
 import com.example.syoui.imagetab.launch_others.LaunchOtherAppActivity;
 import com.example.syoui.imagetab.record.RecordActivity;
-
-import java.util.List;
 
 
 public class KnowledgeActivity extends AppCompatActivity {
@@ -37,11 +32,6 @@ public class KnowledgeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
-
-
-
 
 
 
@@ -116,6 +106,17 @@ public class KnowledgeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplication(), SQLiteActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        Button youtubeButton = (Button) findViewById(R.id.youtubeVideo);
+        youtubeButton.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplication(), YoutubeActivity.class);
                 startActivity(intent);
             }
         });

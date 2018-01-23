@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.syoui.imagetab">
+          package="com.example.syoui.imagetab">
 
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
 
-    <uses-feature android:name="android.hardware.camera" />
-    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-feature android:name="android.hardware.camera.autofocus"/>
 
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -21,64 +21,66 @@
         android:theme="@style/AppTheme">
         <activity android:name=".TutorialActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
         <activity
             android:name=".KnowledgeActivity"
             android:label="@string/title_activity_detail"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".listViewActivity" />
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".listViewActivity"/>
         <activity
             android:name=".subListViewActivity"
             android:label="@string/title_activity_sub_list_view"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".contentActivity" />
-        <activity android:name=".videoActivity" />
-        <activity android:name=".foundation.activity.foundation_activity_listView" />
-        <activity android:name=".foundation.activity.foundation_activity_foldingListView" />
-        <activity android:name=".foundation.activity.foundation_activity_launcher" />
-        <activity android:name=".foundation.activity.foundation_activity_setting" />
-        <activity android:name=".foundation.activity.foundation_activity_icon_listView" />
-        <activity android:name=".foundation.activity.foundation_activity_tab_create" />
-        <activity android:name=".foundation.activity.foundation_activity_google_map" />
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".contentActivity"/>
+        <activity android:name=".videoActivity"/>
+        <activity android:name=".foundation.activity.foundation_activity_listView"/>
+        <activity android:name=".foundation.activity.foundation_activity_foldingListView"/>
+        <activity android:name=".foundation.activity.foundation_activity_launcher"/>
+        <activity android:name=".foundation.activity.foundation_activity_setting"/>
+        <activity android:name=".foundation.activity.foundation_activity_icon_listView"/>
+        <activity android:name=".foundation.activity.foundation_activity_tab_create"/>
+        <activity android:name=".foundation.activity.foundation_activity_google_map"/>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" />
+            android:value="@string/google_maps_key"/>
 
         <activity
             android:name=".foundation.map.MapsActivity"
-            android:label="@string/title_activity_maps" />
-        <activity android:name=".foundation.activity.foundation_activity_layout" />
-        <activity android:name=".foundation.activity.foundation_activity_side_menu" />
-        <activity android:name=".foundation.sensor.sensor_list" />
-        <activity android:name=".foundation.sensor.acceleration" />
-        <activity android:name=".foundation.sensor.tendency" />
-        <activity android:name=".foundation.sensor.magnetism" />
-        <activity android:name=".foundation.sensor.proximity" />
-        <activity android:name=".foundation.sensor.light" />
-        <activity android:name=".foundation.camera.simpleCamera" />
-        <activity android:name=".foundation.camera.camera_preview" />
-        <activity android:name=".foundation.popup.customize" />
-        <activity android:name=".foundation.popup.alert" />
-        <activity android:name=".foundation.popup.confirm" />
-        <activity android:name=".foundation.popup.listViewPopUp" />
-        <activity android:name=".foundation.database.select" />
-        <activity android:name=".record.RecordActivity"></activity>
-        <activity android:name=".SpeakActivity"></activity>
-        <activity android:name=".SlideActivity"></activity>
+            android:label="@string/title_activity_maps"/>
+        <activity android:name=".foundation.activity.foundation_activity_layout"/>
+        <activity android:name=".foundation.activity.foundation_activity_side_menu"/>
+        <activity android:name=".foundation.sensor.sensor_list"/>
+        <activity android:name=".foundation.sensor.acceleration"/>
+        <activity android:name=".foundation.sensor.tendency"/>
+        <activity android:name=".foundation.sensor.magnetism"/>
+        <activity android:name=".foundation.sensor.proximity"/>
+        <activity android:name=".foundation.sensor.light"/>
+        <activity android:name=".foundation.camera.simpleCamera"/>
+        <activity android:name=".foundation.camera.camera_preview"/>
+        <activity android:name=".foundation.popup.customize"/>
+        <activity android:name=".foundation.popup.alert"/>
+        <activity android:name=".foundation.popup.confirm"/>
+        <activity android:name=".foundation.popup.listViewPopUp"/>
+        <activity android:name=".foundation.database.select"/>
+        <activity android:name=".record.RecordActivity"/>
+        <activity android:name=".SpeakActivity"/>
+        <activity android:name=".SlideActivity"/>
         <activity
             android:name=".SQLiteActivity"
             android:label="@string/title_activity_sq_lite_activity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".foundation.fragment.FragmentListenerActivity"
             android:label="@string/title_activity_fragment_listener"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".launch_others.LaunchOtherAppActivity"></activity>
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".launch_others.LaunchOtherAppActivity"/>
+        <activity android:name=".YoutubeActivity">
+        </activity>
     </application>
 
 </manifest>
