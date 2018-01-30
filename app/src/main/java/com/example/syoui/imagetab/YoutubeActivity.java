@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
 
 public class YoutubeActivity extends YouTubeFailureRecoveryActivity {
 
-    private String parseUrl = "https://svc.navicon.com/navicon/pages/linkage_guide/apple_map/ja/linkageguid.html";
+    private String parseUrl = "http://172.21.32.104:8080/youtube.html";
     private MyAsyncTask asyncTask;
     private YouTubePlayer mYouTubePlayer = null;
     private Bundle mBundle = null;

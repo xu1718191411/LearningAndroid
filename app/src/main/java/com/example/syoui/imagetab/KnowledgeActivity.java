@@ -120,6 +120,16 @@ public class KnowledgeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        youtubeButton.setOnLongClickListener(new View.OnLongClickListener(){
+
+            @Override
+            public boolean onLongClick(View v) {
+                Intent intent = new Intent(getApplication(),videoActivity.class);
+                startActivity(intent);
+                return false;
+            }
+        });
     }
 
 
