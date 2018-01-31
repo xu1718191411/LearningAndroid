@@ -81,6 +81,8 @@
         <activity android:name=".launch_others.LaunchOtherAppActivity"/>
         <activity android:name=".YoutubeActivity">
         </activity>
+        <activity android:name=".foundation.activity.foundation_activity_get_attribute_from_xml">
+        </activity>
     </application>
 
 </manifest>

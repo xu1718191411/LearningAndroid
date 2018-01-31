@@ -37,7 +37,7 @@
     </string-array>
 
 
-    <string-array name="type1">
+    <string-array name="type0">
         <item>リストアクティビティを作成する</item>
         <item>折りたたみ可能なリストアクティビティを作成する</item>
         <item>ランチャーアクティビティを作成する</item>
@@ -46,6 +46,7 @@
         <item>GoogleMap</item>
         <item>ナビコン起動する</item>
         <item>サイドメニュー</item>
+        <item>レイアウトの属性の値を取得する</item>
         <item>タブ画面を作成する</item>
         <item>タブが選択されると</item>
         <item>タブ画面を作成する....</item>
@@ -56,12 +57,13 @@
         <item>画面の向きを設定する</item>
     </string-array>
 
-    <string-array name="type2">
+
+    <string-array name="type1">
         <item>基本的な</item>
         <item>マップの拡張機能</item>
     </string-array>
 
-    <string-array name="type3">
+    <string-array name="type2">
         <item>センサーの一覧を取得する</item>
         <item>加速度センサーの値を取得する</item>
         <item>傾きセンサーの値を取得する</item>
@@ -73,13 +75,13 @@
         <item>直線加速度センサーの値を取得する</item>
     </string-array>カメラ
 
-    <string-array name="type4">
+    <string-array name="type3">
         <item>カメラを呼び出す</item>
         <item>カメラプレビュー</item>
     </string-array>
 
 
-    <string-array name="type5">
+    <string-array name="type4">
         <item>alert</item>
         <item>confirm</item>
         <item>customize popUp</item>
@@ -87,7 +89,7 @@
     </string-array>
 
 
-    <string-array name="type6">
+    <string-array name="type5">
         <item>listener処理</item>
     </string-array>
 

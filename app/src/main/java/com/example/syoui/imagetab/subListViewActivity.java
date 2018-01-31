@@ -47,17 +47,17 @@ public class subListViewActivity extends AppCompatActivity {
 
         String[] arrString = {};
         if(type == 0){
-            arrString = getResources().getStringArray(R.array.type1);
+            arrString = getResources().getStringArray(R.array.type0);
         }else if(type == 1){
-            arrString = getResources().getStringArray(R.array.type2);
+            arrString = getResources().getStringArray(R.array.type1);
         }else if(type == 2){
-            arrString = getResources().getStringArray(R.array.type3);
+            arrString = getResources().getStringArray(R.array.type2);
         }else if(type == 3){
-            arrString = getResources().getStringArray(R.array.type4);
+            arrString = getResources().getStringArray(R.array.type3);
         }else if(type == 4){
-            arrString = getResources().getStringArray(R.array.type5);
+            arrString = getResources().getStringArray(R.array.type4);
         }else if(type == 5){
-            arrString = getResources().getStringArray(R.array.type6);
+            arrString = getResources().getStringArray(R.array.type5);
         }else{
             arrString = getResources().getStringArray(R.array.typeDefault);
         }
@@ -110,6 +110,9 @@ public class subListViewActivity extends AppCompatActivity {
                             break;
                         case 7:
                             intent = new Intent(getApplication(),com.example.syoui.imagetab.foundation.activity.foundation_activity_side_menu.class);
+                            break;
+                        case 8:
+                            intent = new Intent(getApplication(),com.example.syoui.imagetab.foundation.activity.foundation_activity_get_attribute_from_xml.class);
                             break;
                         default:
                             intent = new Intent(getApplication(),com.example.syoui.imagetab.foundation.activity.foundation_activity_layout.class);

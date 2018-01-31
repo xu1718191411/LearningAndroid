@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.syoui.imagetab.foundation.activity.foundation_activity_get_attribute_from_xml">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <com.example.syoui.imagetab.foundation.activity.MyLinerLayout
+        xmlns:color="http://www.mrway.net/syoui"
+        color:r="238"
+        color:g="34"
+        color:b="12"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+    </com.example.syoui.imagetab.foundation.activity.MyLinerLayout>
+
+    <com.example.syoui.imagetab.foundation.activity.MyLinerLayout
+        xmlns:color="http://www.mrway.net/syoui"
+        color:r="239"
+        color:g="95"
+        color:b="107"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+    </com.example.syoui.imagetab.foundation.activity.MyLinerLayout>
+
+
+    <com.example.syoui.imagetab.foundation.activity.MyLinerLayout
+        xmlns:color="http://www.mrway.net/syoui"
+        color:r="248"
+        color:g="186"
+        color:b="0"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+    </com.example.syoui.imagetab.foundation.activity.MyLinerLayout>
+
+
+</LinearLayout>
+
+
+
+</android.support.constraint.ConstraintLayout>
