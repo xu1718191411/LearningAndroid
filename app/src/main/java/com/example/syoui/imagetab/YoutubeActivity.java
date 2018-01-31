@@ -27,6 +27,17 @@ public class YoutubeActivity extends YouTubeFailureRecoveryActivity {
         youTubeView.initialize("test", this);
 
 
+
+    }
+
+    @Override
+    public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer player,
+                                        boolean wasRestored) {
+        if (!wasRestored) {
+                //player.loadVideo("tnhjbOwLaLM");
+        }
+
+        mYouTubePlayer = player;
         asyncTask = new MyAsyncTask(parseUrl);
         asyncTask.setmLoadYoutubeUrlListener(new MyAsyncTask.LoadYoutubeUrlListener(){
 
@@ -39,18 +50,6 @@ public class YoutubeActivity extends YouTubeFailureRecoveryActivity {
         });
 
         asyncTask.execute();
-
-
-    }
-
-    @Override
-    public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer player,
-                                        boolean wasRestored) {
-        if (!wasRestored) {
-                //player.loadVideo("tnhjbOwLaLM");
-        }
-
-        mYouTubePlayer = player;
     }
 
     @Override
