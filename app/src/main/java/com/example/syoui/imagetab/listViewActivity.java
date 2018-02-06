@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 import com.example.syoui.imagetab.R.id;
+import com.example.syoui.imagetab.java_knowledge.TypeConvertActivity;
 
 import java.util.ArrayList;
 
@@ -29,6 +30,7 @@ public class listViewActivity extends AppCompatActivity {
 
         String[] categories = getResources().getStringArray(R.array.category);
         String[] category2 = getResources().getStringArray(R.array.category2);
+        String[] category3 = getResources().getStringArray(R.array.category3);
 
 
         if (extras != null) {
@@ -40,9 +42,13 @@ public class listViewActivity extends AppCompatActivity {
                 for(int k=0;k<categories.length;k++){
                     adapter.add(categories[k]);
                 }
-            }else{
+            }else if(category == 2){
                 for(int k=0;k<category2.length;k++){
                     adapter.add(category2[k]);
+                }
+            }else{
+                for(int k=0;k<category3.length;k++){
+                    adapter.add(category3[k]);
                 }
             }
 
@@ -63,23 +69,53 @@ public class listViewActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
 
-                System.out.println(position);
-                ListView listView = (ListView) parent;
-                // クリックされたアイテムを取得します
-                String item = (String) listView.getItemAtPosition(position);
-                Toast.makeText(listViewActivity.this, item, Toast.LENGTH_LONG).show();
-
-                Intent intent = new Intent(getApplication(), subListViewActivity.class);
-
-                intent.putExtra("category", category);
-                intent.putExtra("type", position);
-
-                startActivity(intent);
+                switch (category){
+                    case 1:
+                        goToFoundationSubList(parent,view,position,id);
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        goToJavaKnowledgeList(position);
+                        break;
+                    default:
+                        break;
+                }
 
             }
         });
+
     }
 
+
+    private void goToFoundationSubList(AdapterView<?> parent, View view,
+                                       int position, long id){
+        System.out.println(position);
+        ListView listView = (ListView) parent;
+        // クリックされたアイテムを取得します
+        String item = (String) listView.getItemAtPosition(position);
+        Toast.makeText(listViewActivity.this, item, Toast.LENGTH_LONG).show();
+
+        Intent intent = new Intent(getApplication(), FoundationListViewActivity.class);
+
+        intent.putExtra("category", category);
+        intent.putExtra("type", position);
+
+        startActivity(intent);
+    }
+
+
+    private void goToJavaKnowledgeList(int position){
+
+        switch(position){
+            case 0:
+                Intent intent = new Intent(getApplication(), TypeConvertActivity.class);
+                startActivity(intent);
+                break;
+            default:
+                break;
+        }
+    }
 
 
 }

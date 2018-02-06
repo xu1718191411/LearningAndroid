@@ -36,6 +36,10 @@
         <item>その他</item>
     </string-array>
 
+    <string-array name="category3">
+        <item>型の変換</item>
+    </string-array>
+
 
     <string-array name="type0">
         <item>リストアクティビティを作成する</item>
@@ -78,6 +82,7 @@
     <string-array name="type3">
         <item>カメラを呼び出す</item>
         <item>カメラプレビュー</item>
+        <item>BarCodeを読み込み</item>
     </string-array>
 
 

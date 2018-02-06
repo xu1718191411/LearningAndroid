@@ -39,7 +39,8 @@ public class TutorialActivity extends AppCompatActivity {
         goto_videoView_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), videoActivity.class);
+                Intent intent = new Intent(getApplication(), listViewActivity.class);
+                intent.putExtra("category", 3);
                 startActivity(intent);
             }
         });

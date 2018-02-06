@@ -32,7 +32,7 @@
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".listViewActivity"/>
         <activity
-            android:name=".subListViewActivity"
+            android:name=".FoundationListViewActivity"
             android:label="@string/title_activity_sub_list_view"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".contentActivity"/>
@@ -82,6 +82,12 @@
         <activity android:name=".YoutubeActivity">
         </activity>
         <activity android:name=".foundation.activity.foundation_activity_get_attribute_from_xml">
+        </activity>
+        <activity android:name=".foundation.camera.BarCodeActivity">
+        </activity>
+        <activity android:name=".java_knowledge.TypeConvertActivity">
+        </activity>
+        <activity android:name=".java_knowledge.ReceiveTypeConvertActivity">
         </activity>
     </application>
 

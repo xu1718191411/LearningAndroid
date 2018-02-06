@@ -41,7 +41,7 @@
 
         <Button
             android:id="@+id/goto_videoView_button"
-            android:text="動画再生"
+            android:text="JAVAの知識"
             android:textSize="30sp"
             android:layout_margin="20dp"
             android:layout_width="368dp"
