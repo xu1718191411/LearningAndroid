@@ -7,3 +7,4 @@
 #Twitter for today
 #Several people complained about cat-like noisy at night and a business man on an fishing trip saw a puma up a tree
 #Thirteen is thirteen is not as good as one but it is better that nothing
+#The temple which the archaeologists explored was used as a place of worship from 15th century BC until Roman times
