@@ -75,6 +75,13 @@
             android:text="youtube video"
             android:id="@+id/youtubeVideo"/>
 
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="simple_blockChain"
+            android:id="@+id/simpleBlockChain"/>
+
     </LinearLayout>
 
 </LinearLayout>

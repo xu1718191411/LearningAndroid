@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.example.syoui.imagetab.blockchain.BlockChainActivity;
 import com.example.syoui.imagetab.launch_others.LaunchOtherAppActivity;
 import com.example.syoui.imagetab.record.RecordActivity;
 
@@ -130,6 +131,16 @@ public class KnowledgeActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+        Button simpleBlockChain = (Button) findViewById(R.id.simpleBlockChain);
+        simpleBlockChain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplication(),BlockChainActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
 
