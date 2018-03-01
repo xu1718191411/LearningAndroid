@@ -1,5 +1,6 @@
 package com.example.syoui.imagetab;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -141,6 +142,15 @@ public class KnowledgeActivity extends AppCompatActivity {
             }
         });
 
+        Button download = (Button) findViewById(R.id.download);
+        download.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplication(),DownloadActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 
