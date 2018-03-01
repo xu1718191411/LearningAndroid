@@ -1,5 +1,6 @@
 package com.example.syoui.imagetab;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +9,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.example.syoui.imagetab.blockchain.BlockChainActivity;
 import com.example.syoui.imagetab.launch_others.LaunchOtherAppActivity;
 import com.example.syoui.imagetab.record.RecordActivity;
 
@@ -128,6 +130,25 @@ public class KnowledgeActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplication(),videoActivity.class);
                 startActivity(intent);
                 return false;
+            }
+        });
+
+        Button simpleBlockChain = (Button) findViewById(R.id.simpleBlockChain);
+        simpleBlockChain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplication(),BlockChainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button download = (Button) findViewById(R.id.download);
+        download.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplication(),DownloadActivity.class);
+                startActivity(intent);
             }
         });
     }

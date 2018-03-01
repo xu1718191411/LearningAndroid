@@ -89,6 +89,10 @@
         </activity>
         <activity android:name=".java_knowledge.ReceiveTypeConvertActivity">
         </activity>
+        <activity android:name=".blockchain.BlockChainActivity">
+        </activity>
+        <activity android:name=".DownloadActivity">
+        </activity>
     </application>
 
 </manifest>
