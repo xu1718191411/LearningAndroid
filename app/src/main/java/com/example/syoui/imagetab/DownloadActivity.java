@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.syoui.imagetab.HTTP.MyHttpReponse;
+
 import net.lingala.zip4j.core.ZipFile;
 import net.lingala.zip4j.exception.ZipException;
 
@@ -18,12 +20,15 @@ import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
 
 public class DownloadActivity extends AppCompatActivity {
 
@@ -33,12 +38,8 @@ public class DownloadActivity extends AppCompatActivity {
     private ByteArrayOutputStream mOutputStream = new ByteArrayOutputStream();
     private Handler mHandler = null;
     private static final String zipFileName  = "event.zip";
-    private static final String txtFileName = "event.txt";
+    private static final String zipFileFolder = "extract";
     private static final int SUCCESS_DOWNLOAD_AND_EXTRACT = 0x01;
-    private static final int DOWNLOAD_FAILURE = 0x02;
-    private static final int EXTRACT_FAILURE = 0x03;
-    private static final int READ_FAILURE = 0x04;
-    private static final int WRITE_FAILURE = 0x05;
     private Param param;
     class Param{
         String address;
@@ -48,6 +49,7 @@ public class DownloadActivity extends AppCompatActivity {
     class Result{
         boolean result;
         String message;
+        String extractFolderPath;
     }
 
     private EditText addressEditText = null;
@@ -61,15 +63,10 @@ public class DownloadActivity extends AppCompatActivity {
         addressEditText = (EditText) findViewById(R.id.address);
         passwordEditText = (EditText) findViewById(R.id.password);
 
-
-
-
         Button download = (Button) findViewById(R.id.download);
         download.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
 
                 asyncTask = new AsyncTask<Param, Void, Result>() {
                     @Override
@@ -79,22 +76,28 @@ public class DownloadActivity extends AppCompatActivity {
                         try{
 
                             Param param = params[0];
-                            byte[] total = download(param.address);
-                            if(total.length == 0){
-                                result.message = "failure in getting data from server";
+                            MyHttpReponse myHttpResponse = download(param.address);
+                            if(myHttpResponse.getResponseCode() != 200){
+                                result.message = myHttpResponse.getMessageToString("utf-8");
                                 result.result = false;
                                 return result;
                             }
 
-                            if(!writeIntoCache(total)){
+                            if(!writeIntoCache(myHttpResponse.getMessage())){
                                 result.message = "failure in writting the data";
                                 result.result = false;
                                 return result;
                             }
 
-                            extractZipFile(param.password);
+                            Result resultOfExtract = extractZipFile(param.password);
+                            if(!resultOfExtract.result){
+                                return resultOfExtract;
+                            }
 
-                            String res = readFromCache();
+                            ArrayList<File> fileList = readFileListFromExtractFolder(resultOfExtract.extractFolderPath);
+
+                            //String res = readFromCacheByBuffer();
+                            String res = new String(readFromCacheByByte(fileList.get(0).getAbsolutePath()),"utf-8");
                             Log.d("String", res);
 
                             result.result = true;
@@ -104,11 +107,7 @@ public class DownloadActivity extends AppCompatActivity {
                         }catch (Exception e){
                             e.printStackTrace();
                             result.result = false;
-                            if(e instanceof ZipException){
-                                result.message = "password is incorrect";
-                            }else{
-                                result.message = "failure";
-                            }
+                            result.message = e.getMessage();
                             return result;
                         }
 
@@ -138,11 +137,9 @@ public class DownloadActivity extends AppCompatActivity {
         });
 
 
-
         mHandler = new Handler() {
             @Override
             public void handleMessage(Message msg) {
-
 
                 Bundle data = msg.getData();
                 String message = data.getString("message");
@@ -164,9 +161,11 @@ public class DownloadActivity extends AppCompatActivity {
         mHandler.sendMessage(message);
     }
 
-    private byte[] download(String address){
+    private MyHttpReponse download(String address){
 
                     try{
+
+                    MyHttpReponse myHttpResponse = new MyHttpReponse();
 
                     //String address = "https://www.kernel.org/doc/Documentation/trace/events.txt";
                     //String address = "http://192.168.200.24:8080/event.zip";
@@ -188,8 +187,9 @@ public class DownloadActivity extends AppCompatActivity {
                         mInputStream = httpUrlConnection.getInputStream();
                     } else {
                         mInputStream = httpUrlConnection.getErrorStream();
-                        return new byte[0];
                     }
+
+                    myHttpResponse.setResponseCode(responseCode);
 
                     byte[] tmp = new byte[1024];
                     int len = 0;
@@ -198,22 +198,21 @@ public class DownloadActivity extends AppCompatActivity {
                     }
 
 
-                    byte[] total = mOutputStream.toByteArray();
-
                     mInputStream.close();
                     mOutputStream.close();
-                    return total;
+                    myHttpResponse.setMessage(mOutputStream.toByteArray());
+                    return myHttpResponse;
 
                     }catch (Exception e){
-                        return new byte[0];
+                        MyHttpReponse myHttpResponse = new MyHttpReponse();
+                        myHttpResponse.setMessage(e.getMessage().getBytes());
+                        myHttpResponse.setResponseCode(-1);
+                        return myHttpResponse;
                     }
-
 
     }
 
-
     private Boolean writeIntoCache(byte[] total) {
-
 
             try{
                 InputStream in = new ByteArrayInputStream(total);
@@ -229,18 +228,12 @@ public class DownloadActivity extends AppCompatActivity {
                 return false;
             }
 
-
-
-
     }
 
-    private String readFromCache() throws Exception {
-
-
-
+    private String readFromCacheByBuffer(String fileName) throws Exception {
 
             StringBuffer sb = new StringBuffer();
-            FileInputStream fileInputStream = openFileInput(txtFileName);
+            FileInputStream fileInputStream = openFileInput(fileName);
 
             BufferedInputStream bufferdInputStream = new BufferedInputStream(fileInputStream);
             InputStreamReader inputStreamReader = new InputStreamReader(bufferdInputStream);
@@ -254,22 +247,93 @@ public class DownloadActivity extends AppCompatActivity {
 
     }
 
+    private ArrayList<File> readFileListFromExtractFolder(String path){
+        File folder = new File(path);
+        ArrayList<File> fileList = new ArrayList<File>();
+        if(folder.isFile()){
+            fileList.add(new File(path));
+            return fileList;
+        }
+        File[] files = folder.listFiles();
 
-    private void extractZipFile(String password) throws ZipException{
+        for(int i=0;i<files.length;i++){
+            if(files[i].isFile()){
+                Log.d("aaa",files[i].getAbsolutePath());
+                fileList.add(files[i]);
+            }
+        }
+
+        return fileList;
+
+    }
+
+    private byte[] readFromCacheByByte(String filePath){
+            //FileInputStream fileInputStream = openFileInput(txtFileName);
+
+            try{
+                //File file = new File(this.getApplicationContext().getFilesDir().getAbsolutePath()+ zipFileFolder + "/" + txtFileName);
+                File file = new File(filePath);
+                FileInputStream fileInputStream = new FileInputStream(file);
+
+                ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+                byte[] tmp = new byte[1024];
+                int len = 0;
+                while((len = fileInputStream.read(tmp)) > 0){
+                    byteArrayOutputStream.write(tmp,0,len);
+                }
+                return byteArrayOutputStream.toByteArray();
+            }catch (FileNotFoundException e){
+                return e.getMessage().getBytes();
+            }catch (SecurityException e){
+                return e.getMessage().getBytes();
+            }catch(Exception e){
+                return new String("Exception happened at readFromCacheByByte").getBytes();
+            }
+
+
+    }
+
+
+
+    private Result extractZipFile(String password){
+
+            Result result = new Result();
+            try{
 
             String sourceFilePath = this.getApplicationContext().getFilesDir().getAbsolutePath()+ "/" + zipFileName;
-            String destinationFilePath = this.getApplicationContext().getFilesDir().getAbsolutePath();
+            String destinationFilePath = this.getApplicationContext().getFilesDir().getAbsolutePath()+ zipFileFolder;
 
 
             ZipFile zipFile = new ZipFile(sourceFilePath);
+            if(!zipFile.isValidZipFile()){
+                result.result = true;
+                result.extractFolderPath = sourceFilePath;
+                return result;
+            }
+
             if(zipFile.isEncrypted()){
                 zipFile.setPassword(password);
             }
 
             zipFile.extractAll(destinationFilePath);
+                result.result = true;
+                result.message = "ok";
+                result.extractFolderPath = destinationFilePath;
+            }catch (ZipException e){
+                result.result = false;
+                result.message = e.getMessage();
+
+            }catch (Exception e){
+                result.result = false;
+                result.message = e.getMessage();
+
+            }
+
+            return result;
+
+
 
     }
-
 
 
 }
