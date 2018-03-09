@@ -32,7 +32,7 @@
             android:id="@+id/drawer_button"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
-            android:text="drawer button" />
+            android:text="drawer button111" />
 
         <ListView
             android:id="@+id/listview"

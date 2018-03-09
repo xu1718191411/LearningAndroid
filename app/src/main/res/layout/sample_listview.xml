@@ -1,14 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="org.example.customlistviewsample.MainActivity">
 
-    <ListView
-        android:id="@+id/sample_listview"
+<android.support.v4.widget.DrawerLayout
+               xmlns:android="http://schemas.android.com/apk/res/android"
+               android:id="@+id/drawer_layout"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent">
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent">
 
-</RelativeLayout>
+
+        <ListView
+            android:id="@+id/main_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:layout_gravity="left">
+
+        <ListView
+            android:id="@+id/side_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+
+</android.support.v4.widget.DrawerLayout>

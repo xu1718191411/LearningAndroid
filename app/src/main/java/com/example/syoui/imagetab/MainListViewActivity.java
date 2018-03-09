@@ -14,7 +14,7 @@ import com.example.syoui.imagetab.java_knowledge.TypeConvertActivity;
 import java.util.ArrayList;
 
 
-public class listViewActivity extends AppCompatActivity {
+public class MainListViewActivity extends AppCompatActivity {
 
 
     private  ArrayList<String> foundation = new ArrayList<String>();
@@ -96,7 +96,7 @@ public class listViewActivity extends AppCompatActivity {
         ListView listView = (ListView) parent;
         // クリックされたアイテムを取得します
         String item = (String) listView.getItemAtPosition(position);
-        Toast.makeText(listViewActivity.this, item, Toast.LENGTH_LONG).show();
+        Toast.makeText(MainListViewActivity.this, item, Toast.LENGTH_LONG).show();
 
         Intent intent = new Intent(getApplication(), FoundationListViewActivity.class);
 

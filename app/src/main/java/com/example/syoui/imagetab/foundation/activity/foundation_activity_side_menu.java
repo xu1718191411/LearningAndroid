@@ -76,7 +76,8 @@ public class foundation_activity_side_menu extends AppCompatActivity {
 
 
 
-        mDrawer.setDrawerListener(mDrawerToggle);
+        //mDrawer.setDrawerListener(mDrawerToggle);
+        mDrawer.addDrawerListener(mDrawerToggle);
 
         // UpNavigationアイコン(アイコン横の<の部分)を有効に
         // NavigationDrawerではR.drawable.drawerで上書き

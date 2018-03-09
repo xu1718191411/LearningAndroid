@@ -1,7 +1,10 @@
 package com.example.syoui.imagetab;
 
-import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -12,6 +15,10 @@ import android.widget.LinearLayout;
 import com.example.syoui.imagetab.blockchain.BlockChainActivity;
 import com.example.syoui.imagetab.launch_others.LaunchOtherAppActivity;
 import com.example.syoui.imagetab.record.RecordActivity;
+
+import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 public class KnowledgeActivity extends AppCompatActivity {
@@ -24,6 +31,7 @@ public class KnowledgeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout);
 
+
         image1 = (ImageView) findViewById(R.id.anime);
         Button button = (Button) findViewById(R.id.button);
 
@@ -34,6 +42,9 @@ public class KnowledgeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        temperateDeal();
+        dialog(getOSLanguage());
 
 
 
@@ -153,5 +164,48 @@ public class KnowledgeActivity extends AppCompatActivity {
         });
     }
 
+
+    private static void temperateDeal(){
+        ArrayList<String> arrayResult = new ArrayList<String>();
+        String str = "ここにアクセスしてください　jjhttp://www.google.co.jp ここに来てくださいbgjhghhttp://www.google.comhttp://www.gforce.comhttp://www.cctv.com.cn";
+        String res[] = str.split("(\\s|\\t|\\n)+");
+        for(int i=0;i<res.length;i++){
+            String _res = res[i];
+            Pattern pattern = Pattern.compile("((?:https?):\\/\\/((?!https?).)+)",Pattern.CASE_INSENSITIVE);
+            Matcher matcher = pattern.matcher(_res);
+            while(matcher.find()){
+                int countRes = matcher.groupCount();
+                String result = matcher.group(1);
+                arrayResult.add(result);
+            }
+        }
+
+    }
+
+
+    private String getOSLanguage(){
+        String language = null;
+        if(Build.VERSION.SDK_INT >= 24){
+            language = Resources.getSystem().getConfiguration().getLocales().get(0).getLanguage();
+        }else{
+            language =  Resources.getSystem().getConfiguration().locale.getLanguage();
+        }
+
+        return language;
+    }
+
+
+    private void dialog(String text){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(text);
+
+        builder.setPositiveButton("確認", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+
+        builder.show();
+    }
 
 }

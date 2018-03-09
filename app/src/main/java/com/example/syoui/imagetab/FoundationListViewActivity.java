@@ -4,9 +4,12 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.syoui.imagetab.foundation.database.select;
@@ -27,6 +30,11 @@ public class FoundationListViewActivity extends AppCompatActivity {
      */
     
     private int type;
+    private int category;
+    private ActionBarDrawerToggle mDrawerToggle;
+    private DrawerLayout mDrawer;
+    private SampleListAdapter adapter;
+    private ListView mainListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,47 +42,63 @@ public class FoundationListViewActivity extends AppCompatActivity {
         setContentView(R.layout.sample_listview);
 
         // レイアウトからリストビューを取得
-        ListView listView = (ListView)findViewById(R.id.sample_listview);
+        mainListView = (ListView)findViewById(R.id.main_list_view);
+        mDrawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        mDrawerToggle = new ActionBarDrawerToggle(this,mDrawer,null, R.string.drawer_open,
+                R.string.drawer_close);
+        mDrawer.addDrawerListener(mDrawerToggle);
+
+        ArrayAdapter<String> mainListAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
+
+        ListView sideBarListView = (ListView) findViewById(R.id.side_list_view);
+
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             type = extras.getInt("type");
+            category = extras.getInt("category");
         }else{
-
-        }
-
-        String[] arrString = {};
-        if(type == 0){
-            arrString = getResources().getStringArray(R.array.type0);
-        }else if(type == 1){
-            arrString = getResources().getStringArray(R.array.type1);
-        }else if(type == 2){
-            arrString = getResources().getStringArray(R.array.type2);
-        }else if(type == 3){
-            arrString = getResources().getStringArray(R.array.type3);
-        }else if(type == 4){
-            arrString = getResources().getStringArray(R.array.type4);
-        }else if(type == 5){
-            arrString = getResources().getStringArray(R.array.type5);
-        }else{
-            arrString = getResources().getStringArray(R.array.typeDefault);
+            type = 0;
+            category = 0;
         }
 
 
+        String[] categories = getResources().getStringArray(R.array.category);
+
+        if(category == 1){
+            for(int k=0;k<categories.length;k++){
+                mainListAdapter.add(categories[k]);
+            }
+        }
 
 
+        sideBarListView.setAdapter(mainListAdapter);
+        // アダプターを設定します
+
+
+        sideBarListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    updateMainListView(position);
+                    mDrawer.closeDrawers();
+            }
+        });
+
+        String[] subItems = getItemString(type);
         // リストビューに表示する要素を設定
         ArrayList<SampleListItem> listItems = new ArrayList<>();
-        for (int i = 0; i < arrString.length; i++) {
+        listItems.clear();
+        for (int i = 0; i < subItems.length; i++) {
             Bitmap bmp = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher);  // 今回はサンプルなのでデフォルトのAndroid Iconを利用
-            SampleListItem item = new SampleListItem(bmp, arrString[i]);
+            SampleListItem item = new SampleListItem(bmp, subItems[i]);
             listItems.add(item);
         }
 
         // 出力結果をリストビューに表示
-        SampleListAdapter adapter = new SampleListAdapter(this, R.layout.samplelist_item, listItems);
+        adapter = new SampleListAdapter(this, R.layout.samplelist_item, listItems);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+        mainListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
@@ -111,6 +135,9 @@ public class FoundationListViewActivity extends AppCompatActivity {
                             break;
                         case 8:
                             intent = new Intent(getApplication(),com.example.syoui.imagetab.foundation.activity.foundation_activity_get_attribute_from_xml.class);
+                            break;
+                        case 9:
+                            intent = new Intent(getApplication(),com.example.syoui.imagetab.foundation.activity.foundation_activity_progress_dialog.class);
                             break;
                         default:
                             intent = new Intent(getApplication(),com.example.syoui.imagetab.foundation.activity.foundation_activity_layout.class);
@@ -212,9 +239,43 @@ public class FoundationListViewActivity extends AppCompatActivity {
         });
 
 
-        listView.setAdapter(adapter);
+        mainListView.setAdapter(adapter);
 
 
+    }
+
+
+    private String[] getItemString(int pos){
+        String[] itemString = {};
+        if(pos == 0){
+            itemString = getResources().getStringArray(R.array.type0);
+        }else if(pos == 1){
+            itemString = getResources().getStringArray(R.array.type1);
+        }else if(pos == 2){
+            itemString = getResources().getStringArray(R.array.type2);
+        }else if(pos == 3){
+            itemString = getResources().getStringArray(R.array.type3);
+        }else if(pos == 4){
+            itemString = getResources().getStringArray(R.array.type4);
+        }else if(pos == 5){
+            itemString = getResources().getStringArray(R.array.type5);
+        }else{
+            itemString = getResources().getStringArray(R.array.typeDefault);
+        }
+
+        return itemString;
+    }
+
+
+    private void updateMainListView(int pos){
+        adapter.clear();
+        String[] subItems = getItemString(pos);
+        for (int i = 0; i < subItems.length; i++) {
+            Bitmap bmp = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher);  // 今回はサンプルなのでデフォルトのAndroid Iconを利用
+            SampleListItem item = new SampleListItem(bmp, subItems[i]);
+            adapter.add(item);
+        }
+        mainListView.setAdapter(adapter);
     }
 
 }
