@@ -10,7 +10,6 @@
 
     <uses-permission android:name="android.permission.RECORD_AUDIO"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
@@ -92,6 +91,10 @@
         <activity android:name=".DownloadActivity">
         </activity>
         <activity android:name=".foundation.activity.foundation_activity_progress_dialog">
+        </activity>
+        <activity android:name=".java_knowledge.HttpRequestActivity">
+        </activity>
+        <activity android:name=".java_knowledge.TimeTaskActivity">
         </activity>
     </application>
 

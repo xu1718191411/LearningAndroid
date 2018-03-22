@@ -38,6 +38,8 @@
 
     <string-array name="category3">
         <item>型の変換</item>
+        <item>HttpRequest</item>
+        <item>Timeタスク</item>
     </string-array>
 
 

@@ -4,10 +4,14 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -162,6 +166,9 @@ public class KnowledgeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+        getHtmlFromUrl("https://goo.gl/maps/7PfMVtvicbG2");
     }
 
 
@@ -208,4 +215,41 @@ public class KnowledgeActivity extends AppCompatActivity {
         builder.show();
     }
 
+
+    private void getHtmlFromUrl(String url){
+        final WebView wb = new WebView(getApplicationContext());
+        wb.setWebViewClient(new WebViewClient(){
+
+            @Override
+            public void onPageStarted(WebView view, String url, Bitmap favicon) {
+                super.onPageStarted(view, url, favicon);
+            }
+
+            @Override
+            public void onPageFinished(WebView view, String url) {
+                super.onPageFinished(view, url);
+                String getHTML = "javascript:android.getHTML(document.documentElement.outerHTML);";
+                wb.loadUrl(getHTML);
+            }
+        });
+
+        wb.setVisibility(View.GONE);
+        wb.getSettings().setJavaScriptEnabled(true);
+        wb.addJavascriptInterface(new JavascriptInterface(), "android");
+
+        wb.loadUrl(url);
+    }
+
+
+    private class JavascriptInterface{
+
+        public JavascriptInterface() {
+
+        }
+
+        @android.webkit.JavascriptInterface
+        public void getHTML(String html){
+            Log.d("DENSODENSODENSO",html);
+        }
+    }
 }

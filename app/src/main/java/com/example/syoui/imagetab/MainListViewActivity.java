@@ -1,14 +1,17 @@
 package com.example.syoui.imagetab;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+
 import com.example.syoui.imagetab.R.id;
+import com.example.syoui.imagetab.java_knowledge.HttpRequestActivity;
+import com.example.syoui.imagetab.java_knowledge.TimeTaskActivity;
 import com.example.syoui.imagetab.java_knowledge.TypeConvertActivity;
 
 import java.util.ArrayList;
@@ -108,10 +111,18 @@ public class MainListViewActivity extends AppCompatActivity {
 
 
     private void goToJavaKnowledgeList(int position){
-
+        Intent intent = null;
         switch(position){
             case 0:
-                Intent intent = new Intent(getApplication(), TypeConvertActivity.class);
+                intent = new Intent(getApplication(), TypeConvertActivity.class);
+                startActivity(intent);
+                break;
+            case 1:
+                intent = new Intent(getApplication(), HttpRequestActivity.class);
+                startActivity(intent);
+                break;
+            case 2:
+                intent = new Intent(getApplication(), TimeTaskActivity.class);
                 startActivity(intent);
                 break;
             default:
