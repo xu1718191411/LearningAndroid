@@ -102,6 +102,8 @@
         </activity>
         <activity android:name="com.google.maps.GoogleMap2Activity">
         </activity>
+        <activity android:name="com.google.maps.GoogleMap3Activity">
+        </activity>
     </application>
 
 </manifest>

@@ -148,8 +148,11 @@ public class FoundationListViewActivity extends AppCompatActivity {
                         case 0:
                             intent = new Intent(getApplication(),com.google.maps.GoogleMapActivity.class);
                             break;
-                        default:
+                        case 1:
                             intent = new Intent(getApplication(),com.google.maps.GoogleMap2Activity.class);
+                            break;
+                        default:
+                            intent = new Intent(getApplication(),com.google.maps.GoogleMap3Activity.class);
                             break;
                     }
                 }else if(type == 2){

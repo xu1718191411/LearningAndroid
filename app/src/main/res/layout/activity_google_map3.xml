@@ -5,14 +5,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.google.maps.GoogleMap2Activity">
+    tools:context="com.google.maps.GoogleMap3Activity">
 
 
-    <FrameLayout
-        android:id="@+id/map_container"
+    <com.google.android.gms.maps.StreetViewPanoramaView
+        android:id="@+id/street_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </FrameLayout>
+        android:layout_height="match_parent" >
+    </com.google.android.gms.maps.StreetViewPanoramaView>
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/google_map_v2_layout" />
 
 
 </android.support.constraint.ConstraintLayout>

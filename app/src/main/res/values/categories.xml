@@ -66,8 +66,9 @@
 
 
     <string-array name="type1">
-        <item>基本的な</item>
-        <item>マップの拡張機能</item>
+        <item>map1</item>
+        <item>map2</item>
+        <item>map3</item>
     </string-array>
 
     <string-array name="type2">
