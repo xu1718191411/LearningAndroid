@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.google.maps.GoogleMap2Activity">
+
+
+    <FrameLayout
+        android:id="@+id/map_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/google_map_v2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+        </com.google.android.gms.maps.MapView>
+
+
+
+    </FrameLayout>
+
+
+</android.support.constraint.ConstraintLayout>

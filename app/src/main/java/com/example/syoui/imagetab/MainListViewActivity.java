@@ -79,6 +79,7 @@ public class MainListViewActivity extends AppCompatActivity {
                         goToFoundationSubList(parent,view,position,id);
                         break;
                     case 2:
+
                         break;
                     case 3:
                         goToJavaKnowledgeList(position);

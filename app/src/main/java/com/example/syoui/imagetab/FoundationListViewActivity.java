@@ -14,7 +14,6 @@ import android.widget.ListView;
 
 import com.example.syoui.imagetab.foundation.database.select;
 import com.example.syoui.imagetab.foundation.fragment.FragmentListenerActivity;
-import com.example.syoui.imagetab.foundation.map.MapsActivity;
 import com.example.syoui.imagetab.foundation.popup.alert;
 import com.example.syoui.imagetab.foundation.popup.confirm;
 import com.example.syoui.imagetab.foundation.popup.customize;
@@ -125,7 +124,7 @@ public class FoundationListViewActivity extends AppCompatActivity {
                             intent = new Intent(getApplication(),com.example.syoui.imagetab.foundation.activity.foundation_activity_icon_listView.class);
                             break;
                         case 5:
-                            intent = new Intent(getApplication(),MapsActivity.class);
+//                            intent = new Intent(getApplication(),MapsActivity.class);
                             break;
                         case 6:
                             intent = new Intent(getApplication(),com.example.syoui.imagetab.foundation.activity.foundation_activity_layout.class);
@@ -147,10 +146,10 @@ public class FoundationListViewActivity extends AppCompatActivity {
                     //Maps
                     switch(position){
                         case 0:
-                            intent = new Intent(getApplication(),MapsActivity.class);
+                            intent = new Intent(getApplication(),com.google.maps.GoogleMapActivity.class);
                             break;
                         default:
-                            intent = new Intent(getApplication(),com.example.syoui.imagetab.foundation.activity.foundation_activity_listView.class);
+                            intent = new Intent(getApplication(),com.google.maps.GoogleMap2Activity.class);
                             break;
                     }
                 }else if(type == 2){
