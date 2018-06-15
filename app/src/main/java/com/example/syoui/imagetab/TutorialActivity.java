@@ -65,7 +65,16 @@ public class TutorialActivity extends AppCompatActivity {
             }
         });
 
-
     }
 
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+    }
 }

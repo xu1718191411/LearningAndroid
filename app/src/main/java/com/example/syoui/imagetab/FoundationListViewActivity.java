@@ -228,10 +228,8 @@ public class FoundationListViewActivity extends AppCompatActivity {
                             intent = new Intent(getApplication(),select.class);
                             break;
                     }
-
-
                 }else{
-                    intent = new Intent(getApplication(),customize.class);
+                    intent = new Intent(getApplication(),com.example.syoui.imagetab.foundation.activity.foundation_activity_ble.class);
                 }
 
 

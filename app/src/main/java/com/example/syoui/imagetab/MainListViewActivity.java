@@ -13,6 +13,7 @@ import com.example.syoui.imagetab.R.id;
 import com.example.syoui.imagetab.java_knowledge.HttpRequestActivity;
 import com.example.syoui.imagetab.java_knowledge.TimeTaskActivity;
 import com.example.syoui.imagetab.java_knowledge.TypeConvertActivity;
+import com.example.syoui.imagetab.practical.InteractiveWithWebViewJSActivity;
 
 import java.util.ArrayList;
 
@@ -23,6 +24,8 @@ public class MainListViewActivity extends AppCompatActivity {
     private  ArrayList<String> foundation = new ArrayList<String>();
     private  ArrayList<String> superior = new ArrayList<String>();
     private int category;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,7 +82,7 @@ public class MainListViewActivity extends AppCompatActivity {
                         goToFoundationSubList(parent,view,position,id);
                         break;
                     case 2:
-
+                        goToPracticalUseList(position);
                         break;
                     case 3:
                         goToJavaKnowledgeList(position);
@@ -110,6 +113,17 @@ public class MainListViewActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    private void goToPracticalUseList(int position){
+        Intent intent = null;
+        switch(position){
+            case 0:
+                intent = new Intent(getApplication(), InteractiveWithWebViewJSActivity.class);
+                startActivity(intent);
+                break;
+            default:
+                break;
+        }
+    }
 
     private void goToJavaKnowledgeList(int position){
         Intent intent = null;
