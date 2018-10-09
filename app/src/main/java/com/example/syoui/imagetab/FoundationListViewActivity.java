@@ -12,12 +12,15 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.example.syoui.imagetab.Thread.ThreadInterrunptActivity;
 import com.example.syoui.imagetab.foundation.database.select;
 import com.example.syoui.imagetab.foundation.fragment.FragmentListenerActivity;
 import com.example.syoui.imagetab.foundation.popup.alert;
 import com.example.syoui.imagetab.foundation.popup.confirm;
 import com.example.syoui.imagetab.foundation.popup.customize;
 import com.example.syoui.imagetab.foundation.popup.listViewPopUp;
+import com.example.syoui.imagetab.ServiceActivity.BindServiceActivity;
+import com.example.syoui.imagetab.ServiceActivity.StartServiceActivity;
 
 import java.util.ArrayList;
 
@@ -221,13 +224,32 @@ public class FoundationListViewActivity extends AppCompatActivity {
 
                 } else if(type == 6){
                     switch (position){
-                        case 0:
-                            intent = new Intent(getApplication(),select.class);
-                            break;
                         default:
                             intent = new Intent(getApplication(),select.class);
                             break;
                     }
+                } else if(type == 7){
+                    switch (position){
+                        case 0:
+                            intent = new Intent(getApplication(),ThreadInterrunptActivity.class);
+                            break;
+                        default:
+                            intent = new Intent(getApplication(),ThreadInterrunptActivity.class);
+                            break;
+                    }
+                }else if(type == 14){
+                    switch (position){
+                        case 0:
+                            intent = new Intent(getApplication(), StartServiceActivity.class);
+                            break;
+                        case 1:
+                            intent = new Intent(getApplication(), BindServiceActivity.class);
+                            break;
+                        default:
+                            intent = new Intent(getApplication(), StartServiceActivity.class);
+                            break;
+                    }
+
                 }else{
                     intent = new Intent(getApplication(),com.example.syoui.imagetab.foundation.activity.foundation_activity_ble.class);
                 }
@@ -259,8 +281,14 @@ public class FoundationListViewActivity extends AppCompatActivity {
             itemString = getResources().getStringArray(R.array.type4);
         }else if(pos == 5){
             itemString = getResources().getStringArray(R.array.type5);
+        }else if(pos == 6){
+            itemString = getResources().getStringArray(R.array.type6);
+        }else if(pos == 7){
+            itemString = getResources().getStringArray(R.array.type7);
+        }else if(pos == 14){
+            itemString = getResources().getStringArray(R.array.type14);
         }else{
-            itemString = getResources().getStringArray(R.array.typeDefault);
+            itemString = getResources().getStringArray(R.array.type0);
         }
 
         return itemString;

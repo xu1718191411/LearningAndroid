@@ -116,6 +116,24 @@
             android:enabled="true"
             android:exported="true">
         </service>
+
+        <activity android:name=".Thread.ThreadInterrunptActivity">
+        </activity>
+        <activity android:name=".ServiceActivity.StartServiceActivity">
+        </activity>
+        <activity android:name=".ServiceActivity.BindServiceActivity">
+        </activity>
+
+        <service
+            android:name=".service.MyStartService"
+            android:enabled="true"
+            android:exported="true">
+        </service>
+        <service
+            android:name=".service.MyBindService"
+            android:enabled="true"
+            android:exported="true">
+        </service>
     </application>
 
 </manifest>

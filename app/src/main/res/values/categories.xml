@@ -8,13 +8,14 @@
         <item>ポプアップ</item>
         <item>フラグメント</item>
         <item>データベース</item>
+        <item>スレッド/タスク</item>
         <item>アニメーション</item>
         <item>インテント</item>
         <item>画面表示/操作</item>
         <item>キー/タッチ</item>
         <item>グラフィックス</item>
         <item>コンテントプロバイダ</item>
-        <item>サービス</item>
+        <item>Service</item>
         <item>システム</item>
         <item>スレッド/タスク</item>
         <item>データ処理</item>
@@ -81,7 +82,7 @@
         <item>ジャイロセンサーの値を取得する</item>
         <item>重力センサーの値を取得する</item>
         <item>直線加速度センサーの値を取得する</item>
-    </string-array>カメラ
+    </string-array>
 
     <string-array name="type3">
         <item>カメラを呼び出す</item>
@@ -101,6 +102,23 @@
     <string-array name="type5">
         <item>listener処理</item>
     </string-array>
+
+
+    <string-array name="type6">
+        <item>DATABASE</item>
+    </string-array>
+
+    <string-array name="type7">
+        <item>Thread Interrupt</item>
+    </string-array>
+
+
+    <string-array name="type14">
+        <item>StartService</item>
+        <item>bindService</item>
+    </string-array>
+
+
 
     <string-array name="typeDefault">
         <item>データ一覧</item>
