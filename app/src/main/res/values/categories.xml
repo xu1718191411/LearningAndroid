@@ -124,4 +124,9 @@
         <item>データ一覧</item>
     </string-array>
 
+
+
+    <string-array name="deviceinfo">
+        <item>device language</item>
+    </string-array>
 </resources>

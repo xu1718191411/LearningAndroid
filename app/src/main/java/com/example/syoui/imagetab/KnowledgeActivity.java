@@ -1,11 +1,7 @@
 package com.example.syoui.imagetab;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.graphics.Bitmap;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -17,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.example.syoui.imagetab.blockchain.BlockChainActivity;
+import com.example.syoui.imagetab.java_knowledge.DeviceInfo;
 import com.example.syoui.imagetab.launch_others.LaunchOtherAppActivity;
 import com.example.syoui.imagetab.record.RecordActivity;
 
@@ -36,20 +33,9 @@ public class KnowledgeActivity extends AppCompatActivity {
         setContentView(R.layout.layout);
 
 
-        image1 = (ImageView) findViewById(R.id.anime);
+
         Button button = (Button) findViewById(R.id.button);
-
-        image1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplication(), TutorialActivity.class);
-                startActivity(intent);
-            }
-        });
-
         temperateDeal();
-        dialog(getOSLanguage());
-
 
 
         button.setOnClickListener(new View.OnClickListener(){
@@ -190,30 +176,9 @@ public class KnowledgeActivity extends AppCompatActivity {
     }
 
 
-    private String getOSLanguage(){
-        String language = null;
-        if(Build.VERSION.SDK_INT >= 24){
-            language = Resources.getSystem().getConfiguration().getLocales().get(0).getLanguage();
-        }else{
-            language =  Resources.getSystem().getConfiguration().locale.getLanguage();
-        }
-
-        return language;
-    }
 
 
-    private void dialog(String text){
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage(text);
 
-        builder.setPositiveButton("確認", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int which) {
-
-            }
-        });
-
-        builder.show();
-    }
 
 
     private void getHtmlFromUrl(String url){
@@ -236,7 +201,6 @@ public class KnowledgeActivity extends AppCompatActivity {
         wb.setVisibility(View.GONE);
         wb.getSettings().setJavaScriptEnabled(true);
         wb.addJavascriptInterface(new JavascriptInterface(), "android");
-
         wb.loadUrl(url);
     }
 
@@ -251,5 +215,11 @@ public class KnowledgeActivity extends AppCompatActivity {
         public void getHTML(String html){
             Log.d("DENSODENSODENSO",html);
         }
+    }
+
+    public void getToInfoActivity(View v){
+        Intent intent = new Intent(this, DeviceInfo.class);
+        startActivity(intent);
+
     }
 }

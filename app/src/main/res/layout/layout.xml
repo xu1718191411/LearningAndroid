@@ -24,18 +24,16 @@
             android:id="@+id/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button"/>
-
+            android:text="change picture"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Record"
             android:id="@+id/goToRecord"/>
-
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="他のアプリを起動"
+            android:text="lunch other app"
             android:id="@+id/launchOtherApps"/>
 
     </LinearLayout>
@@ -45,23 +43,30 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="speak"
-        android:id="@+id/speak"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="speak"
+            android:id="@+id/speak"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="slide"
-        android:id="@+id/slide"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="slide"
+            android:id="@+id/slide"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="db"
-        android:id="@+id/db"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="db"
+            android:id="@+id/db"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="deviceInfo"
+            android:onClick="getToInfoActivity"/>
+
     </LinearLayout>
 
 
