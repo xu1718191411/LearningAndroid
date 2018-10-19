@@ -14,7 +14,7 @@ import com.example.syoui.imagetab.R;
 import com.example.syoui.imagetab.Util;
 import com.example.syoui.imagetab.ViewUtil;
 
-public class DeviceInfo extends AppCompatActivity {
+public class DeviceInfoActivity extends AppCompatActivity {
 
     private ListView deviceInfoList;
     private ArrayAdapter<String> deviceInfoAdapter;
@@ -38,7 +38,6 @@ public class DeviceInfo extends AppCompatActivity {
             }
         });
     }
-
 
 
     private String getOSLanguage(){

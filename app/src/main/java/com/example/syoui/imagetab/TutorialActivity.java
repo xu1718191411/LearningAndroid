@@ -60,8 +60,10 @@ public class TutorialActivity extends AppCompatActivity {
         goto_knowledge_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent intent = new Intent(getApplication(), KnowledgeActivity.class);
                 startActivity(intent);
+
             }
         });
 

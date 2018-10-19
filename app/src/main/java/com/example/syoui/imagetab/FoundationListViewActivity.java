@@ -15,6 +15,7 @@ import android.widget.ListView;
 import com.example.syoui.imagetab.Thread.ThreadInterrunptActivity;
 import com.example.syoui.imagetab.foundation.database.select;
 import com.example.syoui.imagetab.foundation.fragment.FragmentListenerActivity;
+import com.example.syoui.imagetab.foundation.popup.CustomDialogActivity;
 import com.example.syoui.imagetab.foundation.popup.alert;
 import com.example.syoui.imagetab.foundation.popup.confirm;
 import com.example.syoui.imagetab.foundation.popup.customize;
@@ -207,6 +208,12 @@ public class FoundationListViewActivity extends AppCompatActivity {
                             break;
                         case 2:
                             intent = new Intent(getApplication(),customize.class);
+                            break;
+                        case 3:
+                            intent = new Intent(getApplication(),listViewPopUp.class);
+                            break;
+                        case 4:
+                            intent = new Intent(getApplication(), CustomDialogActivity.class);
                             break;
                         default:
                             intent = new Intent(getApplication(),listViewPopUp.class);

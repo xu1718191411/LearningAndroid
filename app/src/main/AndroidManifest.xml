@@ -135,7 +135,11 @@
             android:exported="true">
         </service>
 
-        <activity android:name=".java_knowledge.DeviceInfo">
+        <activity android:name=".java_knowledge.DeviceInfoActivity">
+        </activity>
+        <activity android:name=".java_knowledge.TestDozeModeActivity">
+        </activity>
+        <activity android:name=".foundation.popup.CustomDialogActivity">
         </activity>
     </application>
 
