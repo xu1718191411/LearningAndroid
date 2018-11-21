@@ -18,4 +18,23 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+
+
+    <style name="testStyle1">
+        <item name="android:textSize">@dimen/default_text_size</item>
+        <item name="android:textColor">@color/freecolorset1b</item>
+        <item name="android:background">@color/freecolorset1a</item>
+    </style>
+
+    <style name="testStyle2">
+        <item name="android:textSize">@dimen/default_text_size</item>
+        <item name="android:textColor">@color/freecolorset1c</item>
+        <item name="android:background">@color/freecolorset1a</item>
+    </style>
+
+    <style name="testStyle3">
+        <item name="android:background">@color/freecolorset1d</item>
+    </style>
+
+
 </resources>

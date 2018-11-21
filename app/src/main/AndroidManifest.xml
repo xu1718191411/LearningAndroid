@@ -141,6 +141,8 @@
         </activity>
         <activity android:name=".foundation.popup.CustomDialogActivity">
         </activity>
+        <activity android:name=".foundation.activity.foundation_activity_style">
+        </activity>
     </application>
 
 </manifest>
