@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="category">
-        <item>アクティビティ</item>
+        <item>Activity</item>
+        <item>BroadcastReceive</item>
+        <item>Service</item>
+        <item>Content Provider</item>
         <item>マップ</item>
         <item>センサー</item>
         <item>カメラ</item>
@@ -35,12 +38,23 @@
         <item>Google Maps</item>
         <item>音声・画像処理</item>
         <item>Twitter Login</item>
+        <item>SharedPreference</item>
+        <item>SDCard</item>
+        <item>SQLite</item>
+        <item>ContentProvider</item>
+        <item>IO Storage</item>
     </string-array>
 
     <string-array name="category3">
         <item>型の変換</item>
         <item>HttpRequest</item>
         <item>Timeタスク</item>
+        <item>LinearLayout</item>
+        <item>FrameLayout</item>
+        <item>TableLayout</item>
+        <item>RelativeLayout</item>
+        <item>AbsoluteLayout</item>
+        <item>GridLayout</item>
     </string-array>
 
 
@@ -55,7 +69,7 @@
         <item>サイドメニュー</item>
         <item>レイアウトの属性の値を取得する</item>
         <item>ProgressDialogの作成</item>
-        <item>タブ画面を作成する</item>
+        <item>Expandable List</item>
         <item>タブが選択されると</item>
         <item>タブ画面を作成する....</item>
         <item>タブにアイコンを貼り付ける</item>
@@ -130,4 +144,21 @@
     <string-array name="deviceinfo">
         <item>device language</item>
     </string-array>
+
+
+    <string-array name="tutorial_section">
+        <item>Activity</item>
+        <item>BroadcastReceive</item>
+        <item>Service</item>
+        <item>Content Provider</item>
+    </string-array>
+
+    <string-array name="tutorial_section_activity">
+        <item>Intent</item>
+        <item>LifeCycle</item>
+        <item>LaunchMode</item>
+        <item>IntentFilter</item>
+    </string-array>
+
+
 </resources>

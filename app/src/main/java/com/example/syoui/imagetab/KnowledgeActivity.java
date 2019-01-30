@@ -152,11 +152,6 @@ public class KnowledgeActivity extends AppCompatActivity {
     }
 
 
-
-
-
-
-
     private void getHtmlFromUrl(String url){
         final WebView wb = new WebView(getApplicationContext());
         wb.setWebViewClient(new WebViewClient(){

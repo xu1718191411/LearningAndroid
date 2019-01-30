@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">アンドロイド磨き道</string>
+    <string name="app_name">Tutorial</string>
     <string name="title_activity_detail">detailActivity</string>
     <string name="title_activity_sub_list_view">subListViewActivity</string>
     <string name="title_activity_list_view">listViewActivity</string>

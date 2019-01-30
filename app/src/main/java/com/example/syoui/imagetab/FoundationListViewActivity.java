@@ -142,6 +142,9 @@ public class FoundationListViewActivity extends AppCompatActivity {
                         case 9:
                             intent = new Intent(getApplication(),com.example.syoui.imagetab.foundation.activity.foundation_activity_progress_dialog.class);
                             break;
+                        case 10:
+                            intent = new Intent(getApplication(),ExpandableListActivity.class);
+                            break;
                         default:
                             intent = new Intent(getApplication(),com.example.syoui.imagetab.foundation.activity.foundation_activity_layout.class);
                             break;

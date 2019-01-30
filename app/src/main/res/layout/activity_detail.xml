@@ -19,7 +19,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="逆引き(基礎編)"
+            android:text="Components"
             android:textSize="36dp"
             android:textAlignment="center"
             android:textColor="#000000"
@@ -38,7 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#000000"
-            android:text="逆引き(応用編)"
+            android:text="Storage"
             android:textAlignment="center"
             android:textSize="36dp"
             android:layout_gravity="center_vertical"/>
@@ -59,7 +59,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="#000000"
-                android:text="JAVAの知識"
+                android:text="Layout"
                 android:textAlignment="center"
                 android:textSize="36dp"
                 android:layout_gravity="center_vertical"/>
@@ -80,7 +80,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#000000"
-            android:text="詳細ページ"
+            android:text="HardWare"
             android:textAlignment="center"
             android:textSize="36dp"
             android:layout_gravity="center_vertical"/>
@@ -100,7 +100,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#000000"
-            android:text="経験座談会"
+            android:text="Experience"
             android:textAlignment="center"
             android:textSize="36dp"
             android:layout_gravity="center_vertical"/>
